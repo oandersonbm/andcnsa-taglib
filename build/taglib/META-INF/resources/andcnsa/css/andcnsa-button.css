@@ -1,0 +1,5 @@
+.btn{
+	border-radius:0;
+	margin:0 2px;
+	transition:background .3s;
+}

@@ -1,0 +1,21 @@
+.form-control{
+	border-radius:0;
+	transition:background .3s;
+	font-size:1em;
+}
+.form-control:focus{
+	background:#FFF;
+	box-shadow:none !important;
+}
+.form-group.has-error .form-control{
+	color:#af2825;
+	border-color:#d9534f;
+}
+.form-group.has-success .form-control{
+	color:#149278;
+	border-color:#1abc9c;
+}
+.form-group.has-warning .form-control{
+	color:#d08011;
+	border-color:#f0ad4e;
+}

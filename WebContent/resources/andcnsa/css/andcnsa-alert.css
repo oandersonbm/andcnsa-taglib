@@ -1,0 +1,13 @@
+.alert{
+	border-radius:0;
+	color:#FFF;
+}
+.alert-info{
+	background-color:#337ab7;
+}
+.alert-warning{
+	background-color:#f0ad4e;
+}
+.alert-danger{
+	background-color:#d9534f;
+}

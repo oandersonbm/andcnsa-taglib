@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:and="http://andcnsa.com/jsf/component">
+<h:head>
+	<title>MaximusSystem - <ui:insert name="title">Dashboard</ui:insert></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<h:outputStylesheet name="css/bootstrap.min.css" library="layout" />
+	<h:outputStylesheet name="css/font-awesome.min.css" library="layout" />
+	<h:outputStylesheet name="css/andcnsa-fonts.css" library="layout" />
+	<h:outputStylesheet name="css/dashboard.css" library="layout" />
+</h:head>
+
+<h:body>
+	<div id="cabecalho">
+		<div class="navbar">
+			<div class="navbar-header">
+				<a href="#">MaximusSystem</a>
+			</div>
+			<ul class="navbar-links">
+				<li>
+					<a href="#" class="fa fa-envelope open-content"></a>
+					<div class="drop-content">
+						<div class="mensagem row">
+							<div class="enviadaEm">Hoje</div>
+							<div class="col-sm-4 hidden-xs">
+								<img src="#{resource['layout:/img/img-user.png']}" width="65" height="65" />
+							</div>
+							<div class="col-sm-8 col-xs-12">
+								<div class="usuario">Luiz</div>
+								<div class="titulo">Título da mensagem</div>
+							</div>
+						</div>
+						<div class="mensagem urgente row">
+							<div class="enviadaEm">Hoje</div>
+							<div class="col-sm-4 hidden-xs">
+								<img src="#{resource['layout:/img/img-user.png']}" width="65" height="65" />
+							</div>
+							<div class="col-sm-8 col-xs-12">
+								<div class="usuario">Luiz</div>
+								<div class="titulo">Título da mensagem</div>
+							</div>
+						</div>
+						<div class="conteudo">
+							<a href="#" class="btn btn-sm btn-primary btn-block">Exibir mais mensagens</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#" class="fa fa-user open-content"></a>
+					<div class="drop-content">
+						<div class="conteudo">
+							<a href="#" class="btn btn-sm btn-default btn-block">Perfil</a>
+							<a href="#" class="btn btn-sm btn-primary btn-block">Sair</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="menu" class="hidden-sm hidden-xs">
+		
+		<div class="user-info">
+			<div class="user-info-profile-img">
+				<img src="#{resource['layout:/img/img-user.png']}" width="65" height="65" />
+			</div>
+			<div class="user-info-profile">
+				<h2>Anderson</h2>
+				<h3>Administrador</h3>
+			</div>
+		</div>
+		
+		
+		<div class="search">
+			<div class="input-group">
+				<input class="form-control" /> 
+				<span class="input-group-btn">
+					<button class="fa fa-search btn btn-default"></button>
+				</span>
+			</div>
+		</div>
+		
+		
+		<div class="navbar">
+			<a href="#">
+				<i class="fa fa-dashboard fa-2x"></i>
+				Dashboard
+			</a>
+			<a href="#">
+				<i class="fa fa-briefcase fa-2x"></i>
+				Administração
+			</a>
+			<a href="#">
+				<i class="fa fa-users fa-2x"></i>
+				Comercial
+			</a>
+			<a href="#">
+				<i class="fa fa-bar-chart fa-2x"></i>
+				Financeiro
+			</a>
+			<a href="#">
+				<i class="fa fa-file-text fa-2x"></i>
+				Serviços
+			</a>
+			<!-- 
+			<a href="#">
+				<i class="icon-browser"></i>
+				Dashboard
+			</a>
+			<a href="#">
+				<i class="icon-briefcase"></i>
+				Administração
+			</a>
+			<a href="#">
+				<i class="icon-profile-male"></i>
+				Comercial
+			</a>
+			<a href="#">
+				<i class="icon-presentation"></i>
+				Financeiro
+			</a>
+			<a href="#">
+				<i class="icon-document"></i>
+				Serviços
+			</a>
+			 --> 
+		</div>
+	</div>
+
+	<div id="conteudo">
+		<h2>
+			<ui:insert name="title">Dashboard</ui:insert>
+		</h2>
+		<div class="row">
+			<ui:insert name="conteudo">
+			
+				<and:menuBar titulo="Cadastro">
+					<and:subMenu titulo="Cadastro">
+						<and:menuItem href="sistema/index.xhtml">Clientes</and:menuItem>
+						<and:menuItem href="index.xhtml">Clientes</and:menuItem>
+						<and:menuItem>Serviços</and:menuItem>
+					</and:subMenu>
+				</and:menuBar>
+				
+				<and:menuBar titulo="Cadastro">
+					<li class="item">
+						<a href="#">Cadastro</a>
+						<ul class="submenu">
+							<li>
+								<a href="#">Clientes</a>
+							</li>
+							<li>
+								<a href="#">Planos</a>
+							</li>
+							<li>
+								<a href="#">Funcionários</a>
+							</li>
+							<li>
+								<a href="#">Serviços</a>
+							</li>
+							<li>
+								<a href="#">Jazigo</a>
+							</li>
+						</ul>
+					</li>
+				</and:menuBar>
+				
+				<and:panel titulo="Teste" col="4">
+					Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+					<and:inputText value="Normal"></and:inputText>
+					<and:inputText tipo="success" value="Sucesso"></and:inputText>
+					<and:inputText tipo="warning" value="Advertência"></and:inputText>
+					<and:inputText tipo="error" value="Erro"></and:inputText>
+				</and:panel>
+				
+				
+				<and:panel titulo="Teste" col="4">
+					Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+				</and:panel>
+				
+				<and:panel titulo="Teste" cor="cinza" col="4">
+					Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
+				</and:panel>
+				
+				<and:panel titulo="Teste" cor="verde" col="4">
+					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
+					<and:button>Teste</and:button>
+				</and:panel>
+				
+				<and:panel titulo="Teste" cor="vermelho" col="4">
+					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
+					<and:button>Teste</and:button>
+				</and:panel>
+				
+				<and:panel titulo="Teste" cor="azul" col="4">
+					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
+					<and:button>Teste</and:button>
+				</and:panel>
+				
+				<and:panel titulo="Teste" cor="amarelo" col="4">
+					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
+					<and:button>Teste</and:button>
+				</and:panel>
+				
+				<and:panel titulo="Teste" col="4">
+					<and:button>Teste</and:button>
+					<and:button cor="primary">Teste</and:button>
+					<and:button cor="warning">Teste</and:button>
+					<and:button cor="danger">Teste</and:button>
+				</and:panel>
+				
+				<and:panel titulo="Teste" col="4">
+				</and:panel>
+			
+			</ui:insert>
+		</div>
+	</div>
+
+	<h:outputScript name="js/jquery.min.js" library="layout" />
+	<h:outputScript name="js/bootstrap.min.js" library="layout" />
+	<h:outputScript name="js/cdigital.js" library="layout" />
+</h:body>
+
+</html>
