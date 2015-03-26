@@ -9,8 +9,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
 @ResourceDependencies({
-	@ResourceDependency(library="layout", name="css/bootstrap.min.css"),
-	@ResourceDependency(library="layout", name="css/andcnsa-alert.css")
+	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-alert.css")
 })
 public class Alert extends UIComponentBase{
 	public Alert(){

@@ -8,7 +8,7 @@
 	    <target name="init" depends="limpar">
 	        <mkdir dir="${build.dir}" />
 	        <mkdir dir="${build.dir}/META-INF/resources/andcnsa" />
-	        <copydir src="WebContent/resources/andcnsa" dest="${build.dir}/META-INF/resources/andcnsa" />
+	        <copydir src="WebContent/resources/layout" dest="${build.dir}/META-INF/resources/andcnsa" />
 	        <copyfile src="WebContent/WEB-INF/andcnsa.taglib.xml" dest="${build.dir}/META-INF/andcnsa.taglib.xml" />
 	        <copyfile src="WebContent/WEB-INF/faces-config.xml" dest="${build.dir}/META-INF/faces-config.xml" />
 	    </target>
