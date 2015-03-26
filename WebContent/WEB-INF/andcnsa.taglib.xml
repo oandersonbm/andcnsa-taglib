@@ -1,26 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <facelet-taglib version="2.2"
-    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee   http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
-    <namespace>http://www.andcnsa.com/2015.1/</namespace>
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee   http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
+	<namespace>http://www.andcnsa.com/2015.1/</namespace>
 
-    <tag>
-        <tag-name>alert</tag-name>
-        <component>
-            <component-type>alert</component-type>
-        </component>
-        <attribute>
-			<description>Define a cor do alerta, pode ser: info; error e; warning.</description>
+	<tag>
+		<tag-name>button</tag-name>
+		<component>
+			<component-type>button</component-type>
+		</component>
+		<attribute>
+			<description>Define a cor do botão, pode ser: primary, warning, success e danger.</description>
 			<name>cor</name>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
-        <attribute>
+	</tag>
+
+	<tag>
+		<tag-name>alert</tag-name>
+		<component>
+			<component-type>alert</component-type>
+		</component>
+		<attribute>
+			<description>Define a cor do alerta, pode ser: info, warning e danger.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
 			<description>Define se o alerta poderá ser fechado.</description>
 			<name>fecha</name>
 			<required>false</required>
 			<type>java.lang.Boolean</type>
 		</attribute>
-    </tag>
+	</tag>
 </facelet-taglib>
