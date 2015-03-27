@@ -7,18 +7,18 @@
 	<title>MaximusSystem - <ui:insert name="title">Dashboard</ui:insert></title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-	<h:outputStylesheet name="css/bootstrap.min.css" library="layout" />
-	<h:outputStylesheet name="css/font-awesome.min.css" library="layout" />
-	<h:outputStylesheet name="css/andcnsa-fonts.css" library="layout" />
-	<h:outputStylesheet name="css/andcnsa-input.css" library="layout" />
-	<h:outputStylesheet name="css/dashboard.css" library="layout" />
+	<h:outputStylesheet name="css/bootstrap.min.css" library="andcnsa" />
+	<h:outputStylesheet name="css/font-awesome.min.css" library="andcnsa" />
+	<h:outputStylesheet name="css/andcnsa-fonts.css" library="andcnsa" />
+	<h:outputStylesheet name="css/andcnsa-input.css" library="andcnsa" />
+	<h:outputStylesheet name="css/dashboard.css" library="andcnsa" />
 </h:head>
 
 <h:body>
 	<div id="cabecalho">
 		<div class="navbar">
 			<div class="navbar-header">
-				<a href="#">MaximusSystem</a>
+				<a href="#">AndTag</a>
 			</div>
 			<ul class="navbar-links">
 				<li>
@@ -27,7 +27,7 @@
 						<div class="mensagem row">
 							<div class="enviadaEm">Hoje</div>
 							<div class="col-sm-4 hidden-xs">
-								<img src="#{resource['layout:/img/img-user.png']}" width="65" height="65" />
+								<img src="#{resource['andcnsa:/img/img-user.png']}" width="65" height="65" />
 							</div>
 							<div class="col-sm-8 col-xs-12">
 								<div class="usuario">Luiz</div>
@@ -37,7 +37,7 @@
 						<div class="mensagem urgente row">
 							<div class="enviadaEm">Hoje</div>
 							<div class="col-sm-4 hidden-xs">
-								<img src="#{resource['layout:/img/img-user.png']}" width="65" height="65" />
+								<img src="#{resource['andcnsa:/img/img-user.png']}" width="65" height="65" />
 							</div>
 							<div class="col-sm-8 col-xs-12">
 								<div class="usuario">Luiz</div>
@@ -66,7 +66,7 @@
 		
 		<div class="user-info">
 			<div class="user-info-profile-img">
-				<img src="#{resource['layout:/img/img-user.png']}" width="65" height="65" />
+				<img src="#{resource['andcnsa:/img/img-user.png']}" width="65" height="65" />
 			</div>
 			<div class="user-info-profile">
 				<h2>Anderson</h2>
@@ -142,9 +142,9 @@
 		</div>
 	</div>
 
-	<h:outputScript name="js/jquery.min.js" library="layout" />
-	<h:outputScript name="js/bootstrap.min.js" library="layout" />
-	<h:outputScript name="js/cdigital.js" library="layout" />
+	<h:outputScript name="js/jquery.min.js" library="andcnsa" />
+	<h:outputScript name="js/bootstrap.min.js" library="andcnsa" />
+	<h:outputScript name="js/cdigital.js" library="andcnsa" />
 </h:body>
 
 </html>

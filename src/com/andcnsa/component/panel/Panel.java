@@ -1,18 +1,19 @@
-package com.andcnsa.component;
+package com.andcnsa.component.panel;
 
 import java.io.IOException;
 
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
-import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-@FacesComponent(value="panel", createTag=true, namespace="http://andcnsa.com/jsf/component")
 @ResourceDependencies({
-	@ResourceDependency(library="layout", name="css/bootstrap.min.css"),
-	@ResourceDependency(library="layout", name="css/andcnsa-panel.css")
+	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
+	@ResourceDependency(library="andcnsa", name="css/font-awesome.min.css"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-fonts.css"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-panel.css")
 })
 public class Panel extends UIComponentBase{
 	private enum Propriedades{
@@ -45,7 +46,7 @@ public class Panel extends UIComponentBase{
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("<div class='col-md-"+getCol()+"'>");
+		out.write("<div class='andcnsa-panel col-md-"+getCol()+"'>");
 		out.write("<div class='panel panel-"+getCor()+"'>");
 		out.write("<div class='panel-heading'>");
 		out.write(getTitulo());

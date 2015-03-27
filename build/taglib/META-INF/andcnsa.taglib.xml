@@ -72,4 +72,49 @@
 			<type>java.lang.Integer</type>
 		</attribute>
 	</tag>
+
+	<tag>
+		<tag-name>menuBar</tag-name>
+		<component>
+			<component-type>menuBar</component-type>
+		</component>
+		<attribute>
+			<description>Adiciona um título ao menu.</description>
+			<name>titulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>menuItem</tag-name>
+		<component>
+			<component-type>menuItem</component-type>
+		</component>
+		<attribute>
+			<description>Adiciona um título/descrição ao item do menu.</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Endereço do link dentro do projeto.</description>
+			<name>href</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>subMenu</tag-name>
+		<component>
+			<component-type>subMenu</component-type>
+		</component>
+		<attribute>
+			<description>Cria um item com um submenu. Dentro dele deve constar preferencialmente tags "menuItem".</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
 </facelet-taglib>

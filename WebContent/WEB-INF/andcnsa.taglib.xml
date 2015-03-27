@@ -72,4 +72,86 @@
 			<type>java.lang.Integer</type>
 		</attribute>
 	</tag>
+
+	<tag>
+		<tag-name>menuBar</tag-name>
+		<component>
+			<component-type>menuBar</component-type>
+		</component>
+		<attribute>
+			<description>Adiciona um título ao menu.</description>
+			<name>titulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>menuItem</tag-name>
+		<component>
+			<component-type>menuItem</component-type>
+		</component>
+		<attribute>
+			<description>Adiciona um título/descrição ao item do menu.</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Endereço do link dentro do projeto.</description>
+			<name>href</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>subMenu</tag-name>
+		<component>
+			<component-type>subMenu</component-type>
+		</component>
+		<attribute>
+			<description>Define um título para o item que representará o submenu. Dentro dele deve constar preferencialmente tags "menuItem".</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>panel</tag-name>
+		<component>
+			<component-type>panel</component-type>
+		</component>
+		<attribute>
+			<description>Cria o título associado ao panel.</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o estilo de cor que terá o panel. Cores: cinza, azul, verde, amarelo e vermelho.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define a quantidade de colunas ocupadas pelo panel. Valores: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description>Define o subtitulo do panel.</description>
+			<name>subtitulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o panel pode ou não ser fechado.</description>
+			<name>fecha</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
 </facelet-taglib>

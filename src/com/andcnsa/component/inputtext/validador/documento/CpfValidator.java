@@ -68,7 +68,6 @@ public class CpfValidator implements Validator, Validador {
 	
 				}
 			}else{
-				System.out.println("Não preenche os requisitos");
 			}
 		}
 		return true;

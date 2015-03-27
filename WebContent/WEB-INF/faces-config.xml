@@ -18,4 +18,20 @@
 		<component-type>inputText</component-type>
 		<component-class>com.andcnsa.component.inputtext.InputText</component-class>
 	</component>
+	<component>
+		<component-type>menuBar</component-type>
+		<component-class>com.andcnsa.component.menu.MenuBar</component-class>
+	</component>
+	<component>
+		<component-type>menuItem</component-type>
+		<component-class>com.andcnsa.component.menu.MenuItem</component-class>
+	</component>
+	<component>
+		<component-type>subMenu</component-type>
+		<component-class>com.andcnsa.component.menu.SubMenu</component-class>
+	</component>
+	<component>
+		<component-type>panel</component-type>
+		<component-class>com.andcnsa.component.panel.Panel</component-class>
+	</component>
 </faces-config>

@@ -25,8 +25,6 @@ public class EmailValidator implements Validador, Validator{
 	@Override
 	public void validate(FacesContext context, UIComponent component, Object valor)
 			throws ValidatorException {
-		System.out.println("Verificando...");
-		System.out.println(valor);
 		
 		Object email = (String)valor;
 		if(valor != null && email.toString().length() > 0){

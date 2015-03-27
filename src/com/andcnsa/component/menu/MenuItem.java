@@ -38,7 +38,7 @@ public class MenuItem extends UIComponentBase{
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("<li>");
+		out.write("<li class='item'>");
 		String link = (String)Link.getOutcomeLink(context, getHref());
 		out.write("<a href='"+link+"'>");
 		out.write(getTitulo());
