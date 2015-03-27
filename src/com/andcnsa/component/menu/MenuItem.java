@@ -1,20 +1,18 @@
-package com.andcnsa.component;
+package com.andcnsa.component.menu;
 
 import java.io.IOException;
 
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
-import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
 import com.andcnsa.component.util.Link;
 
-@FacesComponent(value="menuItem", createTag=true, namespace="http://andcnsa.com/jsf/component")
 @ResourceDependencies({
-	@ResourceDependency(library="layout", name="css/bootstrap.min.css"),
-	@ResourceDependency(library="layout", name="css/andcnsa-menubar.css")
+	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-menubar.css")
 })
 public class MenuItem extends UIComponentBase{
 	private enum Propriedades{

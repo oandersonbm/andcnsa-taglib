@@ -1,20 +1,18 @@
-package com.andcnsa.component;
+package com.andcnsa.component.menu;
 
 import java.io.IOException;
 
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
-import javax.faces.component.FacesComponent;
 import javax.faces.component.UIComponentBase;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
-@FacesComponent(value="menuBar", createTag=true, namespace="http://andcnsa.com/jsf/component")
 @ResourceDependencies({
-	@ResourceDependency(library="layout", name="css/bootstrap.min.css"),
-	@ResourceDependency(library="layout", name="css/andcnsa-menubar.css")
+	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-menubar.css")
 })
-public class MenuBar extends UIComponentBase{
+public class SubMenu extends UIComponentBase{
 	private enum Propriedades{
 		titulo
 	}
@@ -32,12 +30,17 @@ public class MenuBar extends UIComponentBase{
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("<ul class='menubar'>");
+		out.write("<li class='item'>");
+		out.write("<a href='#'>");
+		out.write(getTitulo());
+		out.write("</a>");
+		out.write("<ul class='submenu'>");
 	}
 	
 	@Override
 	public void encodeEnd(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
 		out.write("</ul>");
+		out.write("</li>");
 	}
 }
