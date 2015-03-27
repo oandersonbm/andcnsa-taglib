@@ -13,6 +13,7 @@ import javax.faces.context.ResponseWriter;
 
 import com.andcnsa.component.inputtext.validador.documento.CpfValidator;
 import com.andcnsa.component.inputtext.validador.email.EmailValidator;
+import com.andcnsa.component.inputtext.validador.obrigatorio.ObrigatorioValidator;
 
 @ResourceDependencies({
 		@ResourceDependency(library = "andcnsa", name = "css/bootstrap.min.css"),
@@ -36,8 +37,6 @@ public class InputText extends UIInput {
 
 	public void setTipo(String tipo) {
 		getStateHelper().put(Propriedades.tipo, tipo);
-		new EmailValidator().verifica(this);
-		new CpfValidator().verifica(this);
 	}
 
 	public String getTipo() {
@@ -76,21 +75,20 @@ public class InputText extends UIInput {
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException {
 		ResponseWriter out = context.getResponseWriter();
-		String clientId = getClientId(context);
-		List<FacesMessage> mensagens = context.getMessageList(clientId);
+		String clientId = getClientId(context) + ".andcnsa";
+		List<FacesMessage> mensagens = context.getMessageList(getClientId(context));
 		
-		out.write("<div class='col-md-"+getCol()+"'>");
+		out.write("<div class='col-md-" + getCol() + "'>");
 		out.write("<div class='form-group'>");
 		if (getLabel() != null) {
-			out.write("<label for='" + clientId + ".andcnsa'>" + getLabel()
-					+ "</label>");
+			out.write("<label for='" + clientId + "'>" + getLabel() + "</label>");
 		}
 		
 		out.startElement("input", this);
 		if (getPlaceholder() != null) {
 			out.writeAttribute("placeholder", getPlaceholder(), null);
 		}
-		out.writeAttribute("name", clientId + ".andcnsa", "clientId");
+		out.writeAttribute("name", clientId, "clientId");
 		out.writeAttribute("class", "form-control ", null);
 		Object v = getValue();
 		if (v != null)
@@ -117,13 +115,16 @@ public class InputText extends UIInput {
 
 	@Override
 	public void decode(FacesContext context) {
+		new ObrigatorioValidator().verifica(this);
+		new EmailValidator().verifica(this);
+		new CpfValidator().verifica(this);
 		@SuppressWarnings("rawtypes")
 		Map requestMap = context.getExternalContext().getRequestParameterMap();
-		String clientId = getClientId(context);
+		String clientId = getClientId(context) + ".andcnsa";
 		try {
 
 			String valorEnviado = (String) requestMap
-					.get(clientId + ".andcnsa");
+					.get(clientId);
 			setSubmittedValue(valorEnviado);
 			setValid(true);
 		} catch (NumberFormatException ex) {

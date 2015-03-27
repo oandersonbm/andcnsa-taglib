@@ -11,15 +11,13 @@
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
 		<and:panel titulo="Teste" cor="cinza">
+			<and:menuBar>
+				<and:menuItem titulo="Teste" />
+				<and:subMenu titulo="Submenu">
+					<and:menuItem titulo="Teste" href="sistema/index.xhtml" />
+				</and:subMenu>
+			</and:menuBar>
 			<h:form>
-				<and:menuBar>
-					<and:menuItem titulo="Teste" />
-					<and:subMenu titulo="Submenu">
-						<and:menuItem titulo="Teste" href="sistema/index.xhtml" />
-					</and:subMenu>
-				</and:menuBar>
-				<and:inputText tipo="documento" label="Documento" placeholder="Digite seu CPF/CNPJ" col="4" />
-				<and:inputText obrigatorio="true" tipo="email" label="E-mail" placeholder="Digite seu e-mail" col="4" />
 				<and:inputText obrigatorio="true" tipo="email" label="E-mail" placeholder="Digite seu e-mail" col="4" />
 				<h:commandButton value="Envia..."></h:commandButton>
 			</h:form>

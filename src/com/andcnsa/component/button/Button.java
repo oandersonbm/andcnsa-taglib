@@ -17,13 +17,19 @@ import javax.faces.context.ResponseWriter;
 })
 public class Button extends UIComponentBase{
 	private enum Propriedades{
-		cor
+		cor, tipo
 	}
 	public void setCor(String cor){
 		getStateHelper().put(Propriedades.cor, cor);
 	}
 	public String getCor(){
 		return (String)getStateHelper().eval(Propriedades.cor, "default");
+	}
+	public void setTipo(String tipo){
+		getStateHelper().put(Propriedades.tipo, tipo);
+	}
+	public String getTipo(){
+		return (String)getStateHelper().eval(Propriedades.tipo, "button");
 	}
 	
 	@Override
@@ -34,12 +40,25 @@ public class Button extends UIComponentBase{
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("<button class='btn btn-"+getCor()+"'>");
+		String clientId = getClientId(context) + ".andcnsa";
+		
+		if(!getTipo().equals("submit")){
+			out.startElement("button", this);
+		}else{
+			out.startElement("input", this);
+		}
+			out.writeAttribute("name", clientId, "clientId");
+			out.writeAttribute("class", "btn btn-"+getCor(), null);
+			out.writeAttribute("type", getTipo(), null);
 	}
 	
 	@Override
 	public void encodeEnd(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("</button>");// </button>
+		if(!getTipo().equals("submit")){
+			out.endElement("button");
+		}else{
+			out.endElement("input");
+		}
 	}
 }
