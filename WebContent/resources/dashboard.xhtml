@@ -2,8 +2,7 @@
           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:and="http://andcnsa.com/jsf/component">
+	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
 	<title>MaximusSystem - <ui:insert name="title">Dashboard</ui:insert></title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,6 +10,7 @@
 	<h:outputStylesheet name="css/bootstrap.min.css" library="layout" />
 	<h:outputStylesheet name="css/font-awesome.min.css" library="layout" />
 	<h:outputStylesheet name="css/andcnsa-fonts.css" library="layout" />
+	<h:outputStylesheet name="css/andcnsa-input.css" library="layout" />
 	<h:outputStylesheet name="css/dashboard.css" library="layout" />
 </h:head>
 
@@ -137,84 +137,6 @@
 		</h2>
 		<div class="row">
 			<ui:insert name="conteudo">
-			
-				<and:menuBar titulo="Cadastro">
-					<and:subMenu titulo="Cadastro">
-						<and:menuItem href="sistema/index.xhtml">Clientes</and:menuItem>
-						<and:menuItem href="index.xhtml">Clientes</and:menuItem>
-						<and:menuItem>Serviços</and:menuItem>
-					</and:subMenu>
-				</and:menuBar>
-				
-				<and:menuBar titulo="Cadastro">
-					<li class="item">
-						<a href="#">Cadastro</a>
-						<ul class="submenu">
-							<li>
-								<a href="#">Clientes</a>
-							</li>
-							<li>
-								<a href="#">Planos</a>
-							</li>
-							<li>
-								<a href="#">Funcionários</a>
-							</li>
-							<li>
-								<a href="#">Serviços</a>
-							</li>
-							<li>
-								<a href="#">Jazigo</a>
-							</li>
-						</ul>
-					</li>
-				</and:menuBar>
-				
-				<and:panel titulo="Teste" col="4">
-					Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-					<and:inputText value="Normal"></and:inputText>
-					<and:inputText tipo="success" value="Sucesso"></and:inputText>
-					<and:inputText tipo="warning" value="Advertência"></and:inputText>
-					<and:inputText tipo="error" value="Erro"></and:inputText>
-				</and:panel>
-				
-				
-				<and:panel titulo="Teste" col="4">
-					Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-				</and:panel>
-				
-				<and:panel titulo="Teste" cor="cinza" col="4">
-					Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto
-				</and:panel>
-				
-				<and:panel titulo="Teste" cor="verde" col="4">
-					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
-					<and:button>Teste</and:button>
-				</and:panel>
-				
-				<and:panel titulo="Teste" cor="vermelho" col="4">
-					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
-					<and:button>Teste</and:button>
-				</and:panel>
-				
-				<and:panel titulo="Teste" cor="azul" col="4">
-					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
-					<and:button>Teste</and:button>
-				</and:panel>
-				
-				<and:panel titulo="Teste" cor="amarelo" col="4">
-					<p>Texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto</p>
-					<and:button>Teste</and:button>
-				</and:panel>
-				
-				<and:panel titulo="Teste" col="4">
-					<and:button>Teste</and:button>
-					<and:button cor="primary">Teste</and:button>
-					<and:button cor="warning">Teste</and:button>
-					<and:button cor="danger">Teste</and:button>
-				</and:panel>
-				
-				<and:panel titulo="Teste" col="4">
-				</and:panel>
 			
 			</ui:insert>
 		</div>

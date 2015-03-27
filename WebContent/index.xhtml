@@ -7,10 +7,15 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:and="http://www.andcnsa.com/2015.1/">
 
-<ui:composition template="/resources/layout/dashboard.xhtml">
+<ui:composition template="/resources/dashboard.xhtml">
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
-		<and:alert>Teste</and:alert>
+		<h:form>
+			<and:inputText tipo="documento" label="Documento" placeholder="Digite seu CPF/CNPJ" col="4" />
+			<and:inputText obrigatorio="true" tipo="email" label="E-mail" placeholder="Digite seu e-mail" col="4" />
+			<and:inputText obrigatorio="true" tipo="email" label="E-mail" placeholder="Digite seu e-mail" col="4" />
+			<h:commandButton value="Envia..."></h:commandButton>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>

@@ -14,4 +14,8 @@
 		<component-type>button</component-type>
 		<component-class>com.andcnsa.component.button.Button</component-class>
 	</component>
+	<component>
+		<component-type>inputText</component-type>
+		<component-class>com.andcnsa.component.inputtext.InputText</component-class>
+	</component>
 </faces-config>

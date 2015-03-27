@@ -35,4 +35,41 @@
 			<type>java.lang.Boolean</type>
 		</attribute>
 	</tag>
+
+	<tag>
+		<tag-name>inputText</tag-name>
+		<component>
+			<component-type>inputText</component-type>
+		</component>
+		<attribute>
+			<description>Define o tipo de inputText a ser exibido. Possíveis valores: email, telefone, documento(cpf/cnpj), data etc.</description>
+			<name>tipo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo é obrigatório ou não. Valores: true ou false.</description>
+			<name>obrigatorio</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo apresentará mensagem quando estiver vazio. Valor: qualquer valor.</description>
+			<name>placeholder</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo aparecerá sozinho ou terá label. Valor: qualquer valor.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o número de colunas que o campo terá. Valor: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+	</tag>
 </facelet-taglib>
