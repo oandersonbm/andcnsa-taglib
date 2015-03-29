@@ -167,7 +167,7 @@
 			<component-type>form</component-type>
 		</component>
 		<attribute>
-			<description>Valores: true ou false.</description>
+			<description>Por padrão não há autocomplete, ou seja, 'off'. Os valores possíveis são: 'on' ou 'off'.</description>
 			<name>autocomplete</name>
 			<required>false</required>
 			<type>java.lang.Boolean</type>
