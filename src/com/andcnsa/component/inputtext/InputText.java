@@ -74,6 +74,9 @@ public class InputText extends UIInput {
 
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException {
+		new EmailValidator().verifica(this);
+		new CpfValidator().verifica(this);
+		new ObrigatorioValidator().verifica(this);
 		ResponseWriter out = context.getResponseWriter();
 		String clientId = getClientId(context) + ".andcnsa";
 		List<FacesMessage> mensagens = context.getMessageList(getClientId(context));
@@ -116,9 +119,6 @@ public class InputText extends UIInput {
 
 	@Override
 	public void decode(FacesContext context) {
-		new ObrigatorioValidator().verifica(this);
-		new EmailValidator().verifica(this);
-		new CpfValidator().verifica(this);
 		@SuppressWarnings("rawtypes")
 		Map requestMap = context.getExternalContext().getRequestParameterMap();
 		String clientId = getClientId(context) + ".andcnsa";
