@@ -90,6 +90,7 @@ public class InputText extends UIInput {
 		}
 		out.writeAttribute("name", clientId, "clientId");
 		out.writeAttribute("class", "form-control ", null);
+		out.writeAttribute("type", getTipo(), null);
 		Object v = getValue();
 		if (v != null)
 			out.writeAttribute("value", v.toString(), "value");

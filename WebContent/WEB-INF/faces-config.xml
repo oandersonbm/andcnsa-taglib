@@ -34,4 +34,8 @@
 		<component-type>panel</component-type>
 		<component-class>com.andcnsa.component.panel.Panel</component-class>
 	</component>
+	<component>
+		<component-type>form</component-type>
+		<component-class>com.andcnsa.component.form.Form</component-class>
+	</component>
 </faces-config>

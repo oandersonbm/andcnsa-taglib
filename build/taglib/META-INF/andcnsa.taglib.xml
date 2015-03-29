@@ -2,7 +2,7 @@
 <facelet-taglib version="2.2"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee   http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
-	<namespace>http://www.andcnsa.com/2015.1/</namespace>
+	<namespace>http://www.andcnsa.com/jsf/</namespace>
 
 	<tag>
 		<tag-name>button</tag-name>
@@ -12,6 +12,12 @@
 		<attribute>
 			<description>Define a cor do botão, pode ser: primary, warning, success e danger.</description>
 			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Tipo do botão, podendo ser: button, reset ou submit.</description>
+			<name>tipo</name>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
@@ -111,10 +117,60 @@
 			<component-type>subMenu</component-type>
 		</component>
 		<attribute>
-			<description>Cria um item com um submenu. Dentro dele deve constar preferencialmente tags "menuItem".</description>
+			<description>Define um título para o item que representará o submenu. Dentro dele deve constar preferencialmente tags "menuItem".</description>
 			<name>titulo</name>
 			<required>true</required>
 			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>panel</tag-name>
+		<component>
+			<component-type>panel</component-type>
+		</component>
+		<attribute>
+			<description>Cria o título associado ao panel.</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o estilo de cor que terá o panel. Cores: cinza, azul, verde, amarelo e vermelho.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define a quantidade de colunas ocupadas pelo panel. Valores: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description>Define o subtitulo do panel.</description>
+			<name>subtitulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o panel pode ou não ser fechado.</description>
+			<name>fecha</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>form</tag-name>
+		<component>
+			<component-type>form</component-type>
+		</component>
+		<attribute>
+			<description>Valores: true ou false.</description>
+			<name>autocomplete</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
 		</attribute>
 	</tag>
 </facelet-taglib>

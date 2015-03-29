@@ -2,7 +2,7 @@
 <facelet-taglib version="2.2"
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee   http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
-	<namespace>http://www.andcnsa.com/2015.1/</namespace>
+	<namespace>http://www.andcnsa.com/jsf/</namespace>
 
 	<tag>
 		<tag-name>button</tag-name>
@@ -156,6 +156,19 @@
 		<attribute>
 			<description>Define se o panel pode ou não ser fechado.</description>
 			<name>fecha</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>form</tag-name>
+		<component>
+			<component-type>form</component-type>
+		</component>
+		<attribute>
+			<description>Valores: true ou false.</description>
+			<name>autocomplete</name>
 			<required>false</required>
 			<type>java.lang.Boolean</type>
 		</attribute>
