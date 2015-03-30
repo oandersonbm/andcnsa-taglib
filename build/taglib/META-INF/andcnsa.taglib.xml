@@ -16,7 +16,7 @@
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
-			<description>Tipo do botão, podendo ser: button, reset ou submit.</description>
+			<description>Tipo do botão, podendo ser: button, static, reset ou submit.</description>
 			<name>tipo</name>
 			<required>false</required>
 			<type>java.lang.String</type>
@@ -29,6 +29,30 @@
 		</attribute>
 		<attribute>
 			<description>Define o valor dentro do botão.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>commandButton</tag-name>
+		<component>
+			<component-type>commandButton</component-type>
+		</component>
+		<attribute>
+			<description>Define a cor do botão, pode ser: primary, warning, success e danger.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define qual a expressão bean da ação. Exemplo: #{bean.acao}</description>
+			<name>action</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o que aparecerá no botão.</description>
 			<name>value</name>
 			<required>true</required>
 			<type>java.lang.String</type>
@@ -124,6 +148,25 @@
 	</tag>
 
 	<tag>
+		<tag-name>menuItemCommand</tag-name>
+		<component>
+			<component-type>menuItemCommand</component-type>
+		</component>
+		<attribute>
+			<description>Define qual a expressão bean da ação. Exemplo: #{bean.acao}</description>
+			<name>action</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o que aparecerá no botão.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
 		<tag-name>subMenu</tag-name>
 		<component>
 			<component-type>subMenu</component-type>
@@ -203,6 +246,7 @@
 			<type>java.lang.String</type>
 		</attribute>
 	</tag>
+	
 	<tag>
 		<tag-name>selectItems</tag-name>
 		<component>
@@ -229,6 +273,25 @@
 		<attribute>
 			<description>Valor que será armazenado, ex.: #{var.id}</description>
 			<name>itemValue</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>dataTable</tag-name>
+		<component>
+			<component-type>dataTable</component-type>
+		</component>
+		<attribute>
+			<description>Valor que será armazenado, ex.: #{var.id}</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Valor da variável. Ex.: 'usuario'</description>
+			<name>var</name>
 			<required>true</required>
 			<type>java.lang.String</type>
 		</attribute>

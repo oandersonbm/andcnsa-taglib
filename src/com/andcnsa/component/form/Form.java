@@ -21,7 +21,7 @@ public class Form extends UIForm{
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
 		String clientId = getClientId(context);
-		out.write("<form id='"+clientId+"' name='"+clientId+"' method='post' enctype='utf-8' autocomplete='"+getAutocomplete()+"'>");	
+		out.write("<form id='"+clientId+"' name='"+clientId+"' method='post' enctype='application/x-www-form-urlencoded' accept-charset='utf-8' autocomplete='"+getAutocomplete()+"'>");	
 		out.write("<input type='hidden' id='"+clientId+"' name='"+clientId+"' value='"+clientId+"'>");		
 	}
 }

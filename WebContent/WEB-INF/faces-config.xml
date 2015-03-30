@@ -15,6 +15,10 @@
 		<component-class>com.andcnsa.component.button.Button</component-class>
 	</component>
 	<component>
+		<component-type>commandButton</component-type>
+		<component-class>com.andcnsa.component.button.CommandButton</component-class>
+	</component>
+	<component>
 		<component-type>inputText</component-type>
 		<component-class>com.andcnsa.component.inputtext.InputText</component-class>
 	</component>
@@ -25,6 +29,10 @@
 	<component>
 		<component-type>menuItem</component-type>
 		<component-class>com.andcnsa.component.menu.MenuItem</component-class>
+	</component>
+	<component>
+		<component-type>menuItemCommand</component-type>
+		<component-class>com.andcnsa.component.menu.MenuItemCommand</component-class>
 	</component>
 	<component>
 		<component-type>subMenu</component-type>
@@ -45,5 +53,9 @@
 	<component>
 		<component-type>selectItems</component-type>
 		<component-class>com.andcnsa.component.select.SelectItems</component-class>
+	</component>
+	<component>
+		<component-type>dataTable</component-type>
+		<component-class>com.andcnsa.component.datatable.DataTable</component-class>
 	</component>
 </faces-config>

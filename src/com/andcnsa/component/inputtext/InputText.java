@@ -87,17 +87,22 @@ public class InputText extends UIInput {
 			out.write("<label for='" + clientId + "'>" + getLabel() + "</label>");
 		}
 		
-		out.startElement("input", this);
-		if (getPlaceholder() != null) {
-			out.writeAttribute("placeholder", getPlaceholder(), null);
+		
+		if(!getTipo().equals("static")){
+			out.startElement("input", this);
+			if (getPlaceholder() != null) {
+				out.writeAttribute("placeholder", getPlaceholder(), null);
+			}
+			out.writeAttribute("name", clientId, "clientId");
+			out.writeAttribute("class", "form-control ", null);
+			out.writeAttribute("type", getTipo(), null);
+			Object v = getValue();
+			if (v != null)
+				out.writeAttribute("value", v.toString(), "value");
+			out.endElement("input");
+		}else{
+			out.write("<p class='form-control-static'>"+getValue()+"</p>");
 		}
-		out.writeAttribute("name", clientId, "clientId");
-		out.writeAttribute("class", "form-control ", null);
-		out.writeAttribute("type", getTipo(), null);
-		Object v = getValue();
-		if (v != null)
-			out.writeAttribute("value", v.toString(), "value");
-		out.endElement("input");
 		
 		for(FacesMessage mensagem : mensagens){
 			if(mensagem.getSeverity() == FacesMessage.SEVERITY_ERROR)
