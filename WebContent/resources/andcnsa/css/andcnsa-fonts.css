@@ -1,7 +1,31 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url('#{resource['andcnsa:fonts/roboto-100.eot']}');
+  src: url('#{resource['andcnsa:fonts/roboto-100.eot#iefix']}') format('embedded-opentype'),
+  url('#{resource['andcnsa:fonts/roboto-100.woff']}') format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  src: url('#{resource['andcnsa:fonts/roboto-300.eot']}');
+  src: url('#{resource['andcnsa:fonts/roboto-300.eot#iefix']}') format('embedded-opentype'),
+  url('#{resource['andcnsa:fonts/roboto-300.woff']}') format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('#{resource['andcnsa:fonts/roboto-700.eot']}');
+  src: url('#{resource['andcnsa:fonts/roboto-700.eot#iefix']}') format('embedded-opentype'),
+  url('#{resource['andcnsa:fonts/roboto-700.woff']}') format('woff');
+}
+
 @font-face{font-family:'andcnsa1';
  src:url('#{resource['andcnsa:fonts/andcnsa-1.eot']}');
  src:url('#{resource['andcnsa:fonts/andcnsa-1.eot']}') format('embedded-opentype'),
- url('#{resource['andcnsa:/fonts/andcnsa-1.woff2']}') format('woff2'),
  url('#{resource['andcnsa:fonts/andcnsa-1.woff']}') format('woff'),
  url('#{resource['andcnsa:fonts/andcnsa-1.ttf']}') format('truetype'),
  url('#{resource['andcnsa:fonts/andcnsa-1.svg']}') format('svg');

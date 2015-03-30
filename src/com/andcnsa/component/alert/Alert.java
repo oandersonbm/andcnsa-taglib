@@ -11,8 +11,8 @@ import javax.faces.context.ResponseWriter;
 @ResourceDependencies({
 	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
 	@ResourceDependency(library="andcnsa", name="css/font-awesome.min.css"),
-	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-fonts.css"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-alert.css")
 })
 public class Alert extends UIComponentBase{

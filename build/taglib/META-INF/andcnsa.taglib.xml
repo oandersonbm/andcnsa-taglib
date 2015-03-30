@@ -21,6 +21,18 @@
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
+		<attribute>
+			<description>Define qual a expressão bean da ação. Exemplo: #{bean.acao}</description>
+			<name>action</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o valor dentro do botão.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
 	</tag>
 
 	<tag>
@@ -171,6 +183,54 @@
 			<name>autocomplete</name>
 			<required>false</required>
 			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>selectMany</tag-name>
+		<component>
+			<component-type>selectMany</component-type>
+		</component>
+		<attribute>
+			<description>Valor do label que deverá aparecer.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>O valor do bean que armazenará o bean, ex.: #{bean.valor}.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>selectItems</tag-name>
+		<component>
+			<component-type>selectItems</component-type>
+		</component>
+		<attribute>
+			<description>Expressão contendo a lista, ex.: #{bean.lista}.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Nome da variável.</description>
+			<name>var</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Label que aparecerá na opção, ex.: #{var.descricao}</description>
+			<name>itemLabel</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Valor que será armazenado, ex.: #{var.id}</description>
+			<name>itemValue</name>
+			<required>true</required>
+			<type>java.lang.String</type>
 		</attribute>
 	</tag>
 </facelet-taglib>

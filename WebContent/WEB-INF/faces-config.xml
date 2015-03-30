@@ -38,4 +38,12 @@
 		<component-type>form</component-type>
 		<component-class>com.andcnsa.component.form.Form</component-class>
 	</component>
+	<component>
+		<component-type>selectMany</component-type>
+		<component-class>com.andcnsa.component.select.SelectMany</component-class>
+	</component>
+	<component>
+		<component-type>selectItems</component-type>
+		<component-class>com.andcnsa.component.select.SelectItems</component-class>
+	</component>
 </faces-config>
