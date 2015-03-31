@@ -228,10 +228,30 @@
 			<type>java.lang.Boolean</type>
 		</attribute>
 	</tag>
+	
 	<tag>
 		<tag-name>selectMany</tag-name>
 		<component>
 			<component-type>selectMany</component-type>
+		</component>
+		<attribute>
+			<description>Valor do label que deverá aparecer.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>O valor do bean que armazenará o bean, ex.: #{bean.valor}.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>selectOne</tag-name>
+		<component>
+			<component-type>selectOne</component-type>
 		</component>
 		<attribute>
 			<description>Valor do label que deverá aparecer.</description>
