@@ -5,29 +5,18 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:and="http://www.andcnsa.com/jsf/">
+	xmlns:and="http://cadernetadigital.com.br/ui">
 
 <ui:composition template="/resources/dashboard.xhtml">
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
-		<and:panel titulo="Teste" cor="cinza">
-			<and:form></and:form>
-			<and:menuBar>
-				<and:menuItem titulo="Teste" />			
-				<and:menuItemCommand action="#{testeBean.testa}" value="Testand" />
-				<and:subMenu titulo="Submenu">
-					<and:menuItem titulo="Teste" href="sistema/index.xhtml" />
-					<and:menuItemCommand action="#{testeBean.testa}" value="Testand" />
-				</and:subMenu>
-			</and:menuBar>
-		</and:panel>
-		<and:panel titulo="Teste">
-			<and:form>
-				<and:commandButton tipo="submit" action="#{testeBean.testa}" value="Teste" />
-			</and:form>
-			<br />
-			
-		</and:panel>
+		<and:menuBar>
+			<and:menuItem titulo="Teste"></and:menuItem>
+			<and:subMenu titulo="Teste">
+				<and:menuItem titulo="Teste"></and:menuItem>
+			</and:subMenu>
+		</and:menuBar>
+		<and:widgetLink col="3" outcome="index" icon="briefcase" cor="azul">Teste</and:widgetLink>
 	</ui:define>
 </ui:composition>
 </html>

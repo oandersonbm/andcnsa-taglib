@@ -9,7 +9,7 @@
 	        <mkdir dir="${build.dir}" />
 	        <mkdir dir="${build.dir}/META-INF/resources/andcnsa" />
 	        <copydir src="WebContent/resources/andcnsa" dest="${build.dir}/META-INF/resources/andcnsa" />
-	        <copyfile src="WebContent/WEB-INF/andcnsa.taglib.xml" dest="${build.dir}/META-INF/andcnsa.taglib.xml" />
+	        <copyfile src="WebContent/WEB-INF/cadernetadigital.taglib.xml" dest="${build.dir}/META-INF/cadernetadigital.taglib.xml" />
 	        <copyfile src="WebContent/WEB-INF/faces-config.xml" dest="${build.dir}/META-INF/faces-config.xml" />
 	    </target>
 
@@ -24,7 +24,7 @@
 	    </target>
 
 	    <target name="empacotar" depends="compilar">
-	        <jar destfile="build/andcnsa-taglib.jar" basedir="${build.dir}" />
+	        <jar destfile="build/cadernetadigital-taglib.jar" basedir="${build.dir}" />
 	    </target>
 
 	</project>

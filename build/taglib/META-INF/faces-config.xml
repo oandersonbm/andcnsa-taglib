@@ -5,61 +5,69 @@
         http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
 	version="2.2">
 
-	<name>andcnsa</name>
+	<name>cadernetadigital</name>
 	<component>
 		<component-type>alert</component-type>
-		<component-class>com.andcnsa.component.alert.Alert</component-class>
+		<component-class>br.com.cadernetadigital.component.alert.Alert</component-class>
 	</component>
 	<component>
 		<component-type>button</component-type>
-		<component-class>com.andcnsa.component.button.Button</component-class>
+		<component-class>br.com.cadernetadigital.component.button.Button</component-class>
 	</component>
 	<component>
 		<component-type>commandButton</component-type>
-		<component-class>com.andcnsa.component.button.CommandButton</component-class>
+		<component-class>br.com.cadernetadigital.component.button.CommandButton</component-class>
 	</component>
 	<component>
 		<component-type>inputText</component-type>
-		<component-class>com.andcnsa.component.inputtext.InputText</component-class>
+		<component-class>br.com.cadernetadigital.component.inputtext.InputText</component-class>
 	</component>
 	<component>
 		<component-type>menuBar</component-type>
-		<component-class>com.andcnsa.component.menu.MenuBar</component-class>
+		<component-class>br.com.cadernetadigital.component.menu.MenuBar</component-class>
 	</component>
 	<component>
 		<component-type>menuItem</component-type>
-		<component-class>com.andcnsa.component.menu.MenuItem</component-class>
+		<component-class>br.com.cadernetadigital.component.menu.MenuItem</component-class>
 	</component>
 	<component>
 		<component-type>menuItemCommand</component-type>
-		<component-class>com.andcnsa.component.menu.MenuItemCommand</component-class>
+		<component-class>br.com.cadernetadigital.component.menu.MenuItemCommand</component-class>
 	</component>
 	<component>
 		<component-type>subMenu</component-type>
-		<component-class>com.andcnsa.component.menu.SubMenu</component-class>
+		<component-class>br.com.cadernetadigital.component.menu.SubMenu</component-class>
 	</component>
 	<component>
 		<component-type>panel</component-type>
-		<component-class>com.andcnsa.component.panel.Panel</component-class>
+		<component-class>br.com.cadernetadigital.component.panel.Panel</component-class>
 	</component>
 	<component>
 		<component-type>form</component-type>
-		<component-class>com.andcnsa.component.form.Form</component-class>
+		<component-class>br.com.cadernetadigital.component.form.Form</component-class>
 	</component>
 	<component>
 		<component-type>selectMany</component-type>
-		<component-class>com.andcnsa.component.select.SelectMany</component-class>
+		<component-class>br.com.cadernetadigital.component.select.SelectMany</component-class>
 	</component>
 	<component>
 		<component-type>selectOne</component-type>
-		<component-class>com.andcnsa.component.select.SelectOne</component-class>
+		<component-class>br.com.cadernetadigital.component.select.SelectOne</component-class>
+	</component>
+	<component>
+		<component-type>selectOneMenu</component-type>
+		<component-class>br.com.cadernetadigital.component.select.SelectOneMenu</component-class>
 	</component>
 	<component>
 		<component-type>selectItems</component-type>
-		<component-class>com.andcnsa.component.select.SelectItems</component-class>
+		<component-class>br.com.cadernetadigital.component.select.SelectItems</component-class>
+	</component>
+	<component>
+		<component-type>widgetLink</component-type>
+		<component-class>br.com.cadernetadigital.component.widget.WidgetLink</component-class>
 	</component>
 	<component>
 		<component-type>dataTable</component-type>
-		<component-class>com.andcnsa.component.datatable.DataTable</component-class>
+		<component-class>br.com.cadernetadigital.component.datatable.DataTable</component-class>
 	</component>
 </faces-config>
