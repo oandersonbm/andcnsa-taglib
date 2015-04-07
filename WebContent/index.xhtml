@@ -10,13 +10,7 @@
 <ui:composition template="/resources/dashboard.xhtml">
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
-		<and:menuBar>
-			<and:menuItem titulo="Teste"></and:menuItem>
-			<and:subMenu titulo="Teste">
-				<and:menuItem titulo="Teste"></and:menuItem>
-			</and:subMenu>
-		</and:menuBar>
-		<and:widgetLink col="3" outcome="index" icon="briefcase" cor="azul">Teste</and:widgetLink>
+		<and:barChart model="#{testeBean.model}"></and:barChart>
 	</ui:define>
 </ui:composition>
 </html>

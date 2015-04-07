@@ -379,6 +379,19 @@
 	</tag>
 	
 	<tag>
+		<tag-name>barChart</tag-name>
+		<component>
+			<component-type>barChart</component-type>
+		</component>
+		<attribute>
+			<description>O modelo deve seguir o BarChartModel do tipo CadernetaDigital.</description>
+			<name>model</name>
+			<required>true</required>
+			<type>br.com.cadernetadigital.component.chart.model.BarChartModel</type>
+		</attribute>
+	</tag>
+	
+	<tag>
 		<tag-name>dataTable</tag-name>
 		<component>
 			<component-type>dataTable</component-type>
