@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facelet-taglib version="2.2"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee   http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
+	<namespace>http://www.andcnsa.com/jsf/</namespace>
+
+	<tag>
+		<tag-name>button</tag-name>
+		<component>
+			<component-type>button</component-type>
+		</component>
+		<attribute>
+			<description>Define a cor do botão, pode ser: primary, warning, success e danger.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Tipo do botão, podendo ser: button, static, reset ou submit.</description>
+			<name>tipo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define qual a expressão bean da ação. Exemplo: #{bean.acao}</description>
+			<name>action</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o valor dentro do botão.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<tag-name>commandButton</tag-name>
+		<component>
+			<component-type>commandButton</component-type>
+		</component>
+		<attribute>
+			<description>Define a cor do botão, pode ser: primary, warning, success e danger.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define qual a expressão bean da ação. Exemplo: #{bean.acao}</description>
+			<name>action</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o que aparecerá no botão.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>alert</tag-name>
+		<component>
+			<component-type>alert</component-type>
+		</component>
+		<attribute>
+			<description>Define a cor do alerta, pode ser: info, warning e danger.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o alerta poderá ser fechado.</description>
+			<name>fecha</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>inputText</tag-name>
+		<component>
+			<component-type>inputText</component-type>
+		</component>
+		<attribute>
+			<description>Define o tipo de inputText a ser exibido. Possíveis valores: email, telefone, documento(cpf/cnpj), data etc.</description>
+			<name>tipo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo é obrigatório ou não. Valores: true ou false.</description>
+			<name>obrigatorio</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo apresentará mensagem quando estiver vazio. Valor: qualquer valor.</description>
+			<name>placeholder</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo aparecerá sozinho ou terá label. Valor: qualquer valor.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o número de colunas que o campo terá. Valor: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>menuBar</tag-name>
+		<component>
+			<component-type>menuBar</component-type>
+		</component>
+		<attribute>
+			<description>Adiciona um título ao menu.</description>
+			<name>titulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>menuItem</tag-name>
+		<component>
+			<component-type>menuItem</component-type>
+		</component>
+		<attribute>
+			<description>Adiciona um título/descrição ao item do menu.</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Ícone do tipo Caderneta Digital.</description>
+			<name>cicon</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Ícone do tipo Fonts Awesome.</description>
+			<name>ficon</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Endereço do link dentro do projeto.</description>
+			<name>href</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>menuItemCommand</tag-name>
+		<component>
+			<component-type>menuItemCommand</component-type>
+		</component>
+		<attribute>
+			<description>Define qual a expressão bean da ação. Exemplo: #{bean.acao}</description>
+			<name>action</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o que aparecerá no botão.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>subMenu</tag-name>
+		<component>
+			<component-type>subMenu</component-type>
+		</component>
+		<attribute>
+			<description>Define um título para o item que representará o submenu. Dentro dele deve constar preferencialmente tags "menuItem".</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>panel</tag-name>
+		<component>
+			<component-type>panel</component-type>
+		</component>
+		<attribute>
+			<description>Cria o título associado ao panel.</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o estilo de cor que terá o panel. Cores: cinza, azul, verde, amarelo e vermelho.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define a quantidade de colunas ocupadas pelo panel. Valores: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description>Define o subtitulo do panel.</description>
+			<name>subtitulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o panel pode ou não ser fechado.</description>
+			<name>fecha</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+
+	<tag>
+		<tag-name>form</tag-name>
+		<component>
+			<component-type>form</component-type>
+		</component>
+		<attribute>
+			<description>Por padrão não há autocomplete, ou seja, 'off'. Os valores possíveis são: 'on' ou 'off'.</description>
+			<name>autocomplete</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>selectMany</tag-name>
+		<component>
+			<component-type>selectMany</component-type>
+		</component>
+		<attribute>
+			<description>Valor do label que deverá aparecer.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>O valor do bean que armazenará o bean, ex.: #{bean.valor}.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo é obrigatório ou não. Valores: true ou false.</description>
+			<name>obrigatorio</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>selectOne</tag-name>
+		<component>
+			<component-type>selectOne</component-type>
+		</component>
+		<attribute>
+			<description>Valor do label que deverá aparecer.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>O valor do bean que armazenará o bean, ex.: #{bean.valor}.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo é obrigatório ou não. Valores: true ou false.</description>
+			<name>obrigatorio</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>selectOneMenu</tag-name>
+		<component>
+			<component-type>selectOneMenu</component-type>
+		</component>
+		<attribute>
+			<description>Valor do label que deverá aparecer.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>O valor do bean que armazenará o bean, ex.: #{bean.valor}.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo é obrigatório ou não. Valores: true ou false.</description>
+			<name>obrigatorio</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>selectItems</tag-name>
+		<component>
+			<component-type>selectItems</component-type>
+		</component>
+		<attribute>
+			<description>Expressão contendo a lista, ex.: #{bean.lista}.</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Nome da variável.</description>
+			<name>var</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Label que aparecerá na opção, ex.: #{var.descricao}</description>
+			<name>itemLabel</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Valor que será armazenado, ex.: #{var.id}</description>
+			<name>itemValue</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>widgetLink</tag-name>
+		<component>
+			<component-type>widgetLink</component-type>
+		</component>
+		<attribute>
+			<description>Link do widget</description>
+			<name>outcome</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define a cor do botão, pode ser: cinza, vermelho, azul e amarelo.</description>
+			<name>cor</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Ícone do tipo Caderneta Digital</description>
+			<name>icon</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Quantidade de colunas. Valores: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>barChart</tag-name>
+		<component>
+			<component-type>barChart</component-type>
+		</component>
+		<attribute>
+			<description>O modelo deve seguir o BarChartModel do tipo CadernetaDigital.</description>
+			<name>model</name>
+			<required>true</required>
+			<type>br.com.cadernetadigital.component.chart.model.BarChartModel</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>dataTable</tag-name>
+		<component>
+			<component-type>dataTable</component-type>
+		</component>
+		<attribute>
+			<description>Valor que será armazenado, ex.: #{var.id}</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Valor da variável. Ex.: 'usuario'</description>
+			<name>var</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+</facelet-taglib>

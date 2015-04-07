@@ -1,0 +1,37 @@
+.form-control{
+	border-radius:0;
+	transition:background .3s;
+	font-size:1em;
+}
+.form-control:focus{
+	background:#FFF;
+	box-shadow:none !important;
+}
+.form-group.has-error .form-control{
+	color:#af2825;
+	border-color:#d9534f;
+}
+.form-group.has-success .form-control{
+	color:#149278;
+	border-color:#1abc9c;
+}
+.form-group.has-warning .form-control{
+	color:#d08011;
+	border-color:#f0ad4e;
+}
+.form-group .form-return{
+	padding:2px;
+	font-size:12px;
+}
+.form-group .erro{
+	background-color:#f4cfce;
+	color:#b12b27;
+}
+.form-group .info{
+	background-color:#d0eaf2;
+	color:#2e8ba7;
+}
+.form-group .warning{
+	background-color:#feeac5;
+	color:#e69704;
+}
