@@ -51,6 +51,10 @@
 		<component-class>br.com.cadernetadigital.component.form.Form</component-class>
 	</component>
 	<component>
+		<component-type>formGroup</component-type>
+		<component-class>br.com.cadernetadigital.component.form.FormGroup</component-class>
+	</component>
+	<component>
 		<component-type>selectMany</component-type>
 		<component-class>br.com.cadernetadigital.component.select.SelectMany</component-class>
 	</component>

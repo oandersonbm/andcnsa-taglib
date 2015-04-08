@@ -252,6 +252,25 @@
 			<type>java.lang.Boolean</type>
 		</attribute>
 	</tag>
+
+	<tag>
+		<tag-name>formGroup</tag-name>
+		<component>
+			<component-type>formGroup</component-type>
+		</component>
+		<attribute>
+			<description>Quantidade de colunas. Valores: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description>Valor do label que deverá aparecer.</description>
+			<name>label</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
 	
 	<tag>
 		<tag-name>selectMany</tag-name>
@@ -323,6 +342,12 @@
 		<attribute>
 			<description>Define se o campo é obrigatório ou não. Valores: true ou false.</description>
 			<name>obrigatorio</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Define se o campo será utilizado por ajax. Valores: true ou false.</description>
+			<name>ajax</name>
 			<required>false</required>
 			<type>java.lang.Boolean</type>
 		</attribute>
