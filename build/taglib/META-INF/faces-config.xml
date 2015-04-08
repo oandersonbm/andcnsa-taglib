@@ -19,6 +19,10 @@
 		<component-class>br.com.cadernetadigital.component.button.CommandButton</component-class>
 	</component>
 	<component>
+		<component-type>buttonContainer</component-type>
+		<component-class>br.com.cadernetadigital.component.button.ButtonContainer</component-class>
+	</component>
+	<component>
 		<component-type>inputText</component-type>
 		<component-class>br.com.cadernetadigital.component.inputtext.InputText</component-class>
 	</component>
@@ -35,8 +39,8 @@
 		<component-class>br.com.cadernetadigital.component.menu.MenuItemCommand</component-class>
 	</component>
 	<component>
-		<component-type>subMenu</component-type>
-		<component-class>br.com.cadernetadigital.component.menu.SubMenu</component-class>
+		<component-type>menuSubMenu</component-type>
+		<component-class>br.com.cadernetadigital.component.menu.MenuSubMenu</component-class>
 	</component>
 	<component>
 		<component-type>panel</component-type>

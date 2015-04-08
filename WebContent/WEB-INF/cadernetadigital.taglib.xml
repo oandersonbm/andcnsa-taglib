@@ -58,6 +58,18 @@
 			<type>java.lang.String</type>
 		</attribute>
 	</tag>
+	<tag>
+		<tag-name>buttonContainer</tag-name>
+		<component>
+			<component-type>buttonContainer</component-type>
+		</component>
+		<attribute>
+			<description>Define o número de colunas que o campo terá. Valor: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+	</tag>
 
 	<tag>
 		<tag-name>alert</tag-name>
@@ -179,9 +191,9 @@
 	</tag>
 
 	<tag>
-		<tag-name>subMenu</tag-name>
+		<tag-name>menuSubMenu</tag-name>
 		<component>
-			<component-type>subMenu</component-type>
+			<component-type>menuSubMenu</component-type>
 		</component>
 		<attribute>
 			<description>Define um título para o item que representará o submenu. Dentro dele deve constar preferencialmente tags "menuItem".</description>
@@ -313,6 +325,12 @@
 			<name>obrigatorio</name>
 			<required>false</required>
 			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Quantidade de colunas. Valores: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
 		</attribute>
 	</tag>
 	

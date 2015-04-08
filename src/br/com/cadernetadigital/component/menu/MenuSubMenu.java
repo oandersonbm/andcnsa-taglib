@@ -12,7 +12,7 @@ import javax.faces.context.ResponseWriter;
 	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-menubar.css")
 })
-public class SubMenu extends UIComponentBase{
+public class MenuSubMenu extends UIComponentBase{
 	private enum Propriedades{
 		titulo
 	}

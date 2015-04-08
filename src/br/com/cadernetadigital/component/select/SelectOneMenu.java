@@ -18,7 +18,7 @@ import javax.faces.context.ResponseWriter;
 })
 public class SelectOneMenu extends HtmlSelectOneMenu{
 	private enum Propriedades{
-		obrigatorio
+		obrigatorio, label, col
 	}
 	public void setObrigatorio(Boolean arg1){
 		getStateHelper().put(Propriedades.obrigatorio, arg1);
@@ -26,14 +26,29 @@ public class SelectOneMenu extends HtmlSelectOneMenu{
 	public Boolean getObrigatorio(){
 		return (Boolean)getStateHelper().eval(Propriedades.obrigatorio, false);
 	}
+	public void setLabel(String arg1){
+		getStateHelper().put(Propriedades.label, arg1);
+	}
+	public String getLabel(){
+		return (String)getStateHelper().eval(Propriedades.label, "");
+	}
+
+	public void setCol(Integer col) {
+		getStateHelper().put(Propriedades.col, col);
+	}
+
+	public Integer getCol() {
+		return (Integer) getStateHelper().eval(Propriedades.col, 12);
+	}
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
 		super.setStyleClass("andselectonemenu form-control");
 		super.setRequired(getObrigatorio());
 		super.setRequiredMessage("Campo obrigatório");
-		
+		out.write("<div class='col-md-"+getCol()+"'>");
 		out.write("<div class='form-group'>");
+		out.write("<label for='"+getClientId()+"'>"+getLabel()+"</label>");
 		super.encodeBegin(context);
 	}
 	@Override
@@ -49,6 +64,7 @@ public class SelectOneMenu extends HtmlSelectOneMenu{
 			else
 				out.write("<div class='form-return info fa fa-info-circle'>"+mensagem.getDetail()+"</div>");
 		}
-		out.write("</div>");
+		out.write("</div>");//</form-group>
+		out.write("</div>");//</col>
 	}
 }

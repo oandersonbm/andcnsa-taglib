@@ -2,12 +2,11 @@ package br.com.cadernetadigital.component.inputtext;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
-import javax.faces.component.UIInput;
+import javax.faces.component.html.HtmlInputText;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 
@@ -19,6 +18,7 @@ import br.com.cadernetadigital.component.inputtext.validador.obrigatorio.Obrigat
 		@ResourceDependency(library = "andcnsa", name = "css/bootstrap.min.css"),
 		@ResourceDependency(library="andcnsa", name="css/font-awesome.min.css"),
 		@ResourceDependency(library="andcnsa", name="css/andcnsa-fonts.css"),
+		@ResourceDependency(library="andcnsa", name="css/andcnsa-input.css"),
 		@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
 		@ResourceDependency(library = "andcnsa", name = "css/bootstrap-datepicker.min.css"),
 		@ResourceDependency(library = "andcnsa", name = "js/jquery.min.js"),
@@ -26,7 +26,7 @@ import br.com.cadernetadigital.component.inputtext.validador.obrigatorio.Obrigat
 		@ResourceDependency(library = "andcnsa", name = "js/bootstrap-datepicker.pt-BR.min.js"),
 		@ResourceDependency(library = "andcnsa", name = "js/cdigital.js")
 })
-public class InputText extends UIInput {
+public class InputText extends HtmlInputText {
 	private enum Propriedades {
 		label, tipo, obrigatorio, placeholder, col
 	}
@@ -72,18 +72,12 @@ public class InputText extends UIInput {
 	}
 
 	@Override
-	public String getFamily() {
-		return "form";
-	}
-
-	@Override
 	public void encodeBegin(FacesContext context) throws IOException {
 		new EmailValidator().verifica(this);
 		new CpfValidator().verifica(this);
 		new ObrigatorioValidator().verifica(this);
 		ResponseWriter out = context.getResponseWriter();
 		String clientId = getClientId(context) + ".andcnsa";
-		List<FacesMessage> mensagens = context.getMessageList(getClientId(context));
 		
 		out.write("<div class='col-md-" + getCol() + "'>");
 		out.write("<div class='form-group'>");
@@ -93,26 +87,20 @@ public class InputText extends UIInput {
 		
 		
 		if(!getTipo().equals("static")){
-			out.startElement("input", this);
-			if (getPlaceholder() != null) {
-				out.writeAttribute("placeholder", getPlaceholder(), null);
-			}
-			out.writeAttribute("name", clientId, "clientId");
-			
-			if(getTipo().equals("data")){
-				out.writeAttribute("class", "form-control "+getTipo(), null);
-				out.writeAttribute("type", "text", null);				
-			}else{
-				out.writeAttribute("class", "form-control ", null);
-				out.writeAttribute("type", getTipo(), null);
-			}
-			Object v = getValue();
-			if (v != null)
-				out.writeAttribute("value", v.toString(), "value");
-			out.endElement("input");
+			setStyleClass("form-control "+getTipo());
 		}else{
 			out.write("<p class='form-control-static'>"+getValue()+"</p>");
 		}
+		super.encodeBegin(context);
+
+	}
+
+	@Override
+	public void encodeEnd(FacesContext context) throws IOException {
+		super.encodeEnd(context);
+		ResponseWriter out = context.getResponseWriter();
+		
+		List<FacesMessage> mensagens = context.getMessageList(getClientId(context));
 		
 		for(FacesMessage mensagem : mensagens){
 			if(mensagem.getSeverity() == FacesMessage.SEVERITY_ERROR)
@@ -122,31 +110,7 @@ public class InputText extends UIInput {
 			else
 				out.write("<div class='form-return info fa fa-info-circle'>"+mensagem.getDetail()+"</div>");
 		}
-
-	}
-
-	@Override
-	public void encodeEnd(FacesContext context) throws IOException {
-		ResponseWriter out = context.getResponseWriter();
 		out.write("</div>"); // </form-group>
 		out.write("</div>"); // </col>
-	}
-
-	@Override
-	public void decode(FacesContext context) {
-		@SuppressWarnings("rawtypes")
-		Map requestMap = context.getExternalContext().getRequestParameterMap();
-		String clientId = getClientId(context) + ".andcnsa";
-		try {
-
-			String valorEnviado = (String) requestMap
-					.get(clientId);
-			setSubmittedValue(valorEnviado);
-			setValid(true);
-		} catch (NumberFormatException ex) {
-			ex.printStackTrace();
-			setSubmittedValue((String) requestMap.get(clientId));
-		}
-
 	}
 }

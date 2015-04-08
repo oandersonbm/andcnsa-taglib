@@ -1,8 +1,11 @@
 package br.com.cadernetadigital.component.button;
 
+import java.io.IOException;
+
 import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
 import javax.faces.component.html.HtmlCommandButton;
+import javax.faces.context.FacesContext;
 
 @ResourceDependencies({
 	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
@@ -17,7 +20,6 @@ public class CommandButton extends HtmlCommandButton{
 	}
 	public void setCor(String cor){
 		getStateHelper().put(Propriedades.cor, cor);
-		setStyleClass("btn btn-"+getCor());
 	}
 	public String getCor(){
 		return (String)getStateHelper().eval(Propriedades.cor, "default");
@@ -25,5 +27,11 @@ public class CommandButton extends HtmlCommandButton{
 	
 	public CommandButton(){
 		super();
+	}
+	
+	@Override
+	public void encodeBegin(FacesContext context) throws IOException{
+		setStyleClass("btn btn-"+getCor());
+		super.encodeBegin(context);
 	}
 }

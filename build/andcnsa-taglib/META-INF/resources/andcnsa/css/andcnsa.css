@@ -1,9 +1,0 @@
-body{
-	font-family: 'Roboto', sans-serif;
-}
-:focus{
-	outline:none;
-}
-a:hover, a:active, a:focus{
-	text-decoration:none;
-}

@@ -1,4 +1,4 @@
-package br.com.cadernetadigital.component.menu;
+package br.com.cadernetadigital.component.button;
 
 import java.io.IOException;
 
@@ -13,32 +13,38 @@ import javax.faces.context.ResponseWriter;
 	@ResourceDependency(library="andcnsa", name="css/font-awesome.min.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-fonts.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
-	@ResourceDependency(library="andcnsa", name="css/andcnsa-menubar.css")
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-button.css")
 })
-public class MenuBar extends UIComponentBase{
+public class ButtonContainer extends UIComponentBase{
+	
 	private enum Propriedades{
-		titulo
+		col
 	}
-	public void setTitulo(String titulo){
-		getStateHelper().put(Propriedades.titulo, titulo);
+	
+	public void setCol(Integer arg1){
+		getStateHelper().put(Propriedades.col, arg1);
 	}
-	public String getTitulo(){
-		return (String)getStateHelper().eval(Propriedades.titulo, null);
+	public Integer getCol(){
+		return (Integer)getStateHelper().eval(Propriedades.col, 12);
 	}
+
 	@Override
 	public String getFamily() {
-		return "layout";
+		return "button";
 	}
 	
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("<ul class='menubar col-md-12'>");
+		out.write("<div class='col-md-"+getCol()+"'>");
+		out.write("<div class='btn-container'>");
 	}
 	
 	@Override
 	public void encodeEnd(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("</ul>");
+		out.write("</div>");
+		out.write("</div>");
 	}
+
 }

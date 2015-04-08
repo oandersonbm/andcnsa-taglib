@@ -2,10 +2,15 @@
 	border-radius:0;
 	transition:background .3s;
 	font-size:1em;
+	height:35px;
 }
 .form-control:focus{
 	background:#FFF;
 	box-shadow:none !important;
+}
+.form-group{
+	min-height:90px;
+	margin-bottom:2px;
 }
 .form-group.has-error .form-control{
 	color:#af2825;

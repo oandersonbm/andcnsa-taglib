@@ -10,6 +10,10 @@
 <ui:composition template="/resources/dashboard.xhtml">
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
+		<and:form>
+		<and:inputText label="Teste" obrigatorio="true"></and:inputText>
+		<and:commandButton value=""></and:commandButton>
+		</and:form>
 		<and:barChart model="#{testeBean.model}"></and:barChart>
 	</ui:define>
 </ui:composition>
