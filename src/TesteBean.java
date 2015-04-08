@@ -3,6 +3,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 import br.com.cadernetadigital.component.chart.model.BarChartModel;
+import br.com.cadernetadigital.component.chart.model.ChartColor;
 import br.com.cadernetadigital.component.chart.model.ChartSeries;
 
 
@@ -15,6 +16,7 @@ public class TesteBean {
 	public void init(){
 		model = new BarChartModel();
 		serie = new ChartSeries();
+		serie.setCor(ChartColor.CINZA);
 		serie.add("Janeiro", 11f);
 		serie.add("Fevereiro", 10f);
 		serie.add("Março", 11f);
@@ -31,6 +33,7 @@ public class TesteBean {
 		serie = new ChartSeries();
 		serie.add("Janeiro", 15f);
 		serie.add("Fevereiro", 20f);
+		serie.add("Abril", 20f);
 		getModel().addSeries(serie);
 	}
 	public BarChartModel getModel() {

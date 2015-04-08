@@ -14,7 +14,9 @@
 		<and:inputText label="Teste" obrigatorio="true"></and:inputText>
 		<and:commandButton value=""></and:commandButton>
 		</and:form>
-		<and:barChart model="#{testeBean.model}"></and:barChart>
+		<and:panel titulo="Gráfico" col="6">
+			<and:barChart model="#{testeBean.model}"></and:barChart>
+		</and:panel>
 	</ui:define>
 </ui:composition>
 </html>
