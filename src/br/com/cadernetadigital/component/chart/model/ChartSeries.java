@@ -1,21 +1,21 @@
 package br.com.cadernetadigital.component.chart.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class ChartSeries {
+	private String label;
 	private ChartColor cor = null;
-	private List<String> labels;
-	private HashMap<String,Float> valores;
-	
-	public ChartSeries(){
-		setValores(new HashMap<String,Float>());
-		setLabels(new ArrayList<String>());
+	private HashMap<String,Number> valores;
+	public ChartSeries(String label){
+		this.label = label;
+		setValores(new HashMap<String,Number>());
+	}
+	public ChartSeries(ChartColor cor){
+		this.cor = cor;
+		setValores(new HashMap<String,Number>());
 	}
 
-	public void add(String label, Float valor){
-		getLabels().add(label);
+	public void add(String label, Number valor){
 		getValores().put(label,valor);
 	}
 
@@ -28,21 +28,26 @@ public class ChartSeries {
 	public void setCor(ChartColor cor) {
 		this.cor = cor;
 	}
-
-	public List<String> getLabels() {
-		return labels;
+	
+	public Number getValor(String label){
+		if(valores.get(label) != null)
+			return valores.get(label);
+		else
+			return 0;
 	}
 
-	public void setLabels(List<String> labels) {
-		this.labels = labels;
-	}
-
-	public HashMap<String, Float> getValores() {
+	public HashMap<String, Number> getValores() {
 		return valores;
 	}
 
-	public void setValores(HashMap<String,Float> valores) {
+	public void setValores(HashMap<String,Number> valores) {
 		this.valores = valores;
+	}
+	public String getLabel() {
+		return label;
+	}
+	public void setLabel(String label) {
+		this.label = label;
 	}
 	
 }

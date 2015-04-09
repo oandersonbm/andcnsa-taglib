@@ -11,35 +11,49 @@ import br.com.cadernetadigital.component.chart.model.ChartSeries;
 @RequestScoped
 public class TesteBean {
 	private BarChartModel model;
+	private BarChartModel model2;
 	private ChartSeries serie;
 	@PostConstruct
 	public void init(){
-		model = new BarChartModel();
-		serie = new ChartSeries();
+		model = new BarChartModel("Janeiro","Fevereiro", "Março", "Abril");
+		serie = new ChartSeries("Zé do Alho");
 		serie.setCor(ChartColor.CINZA);
-		serie.add("Janeiro", 11f);
-		serie.add("Fevereiro", 10f);
-		serie.add("Março", 11f);
-		serie.add("Abril", 10f);
-		serie.add("Maio", 11f);
-		serie.add("Junho", 10f);
-		serie.add("Julho", 10f);
-		serie.add("Agosto", 10f);
-		serie.add("Setembro", 10f);
-		serie.add("Outubro", 10f);
-		serie.add("Novembro", 10f);
-		serie.add("Dezembro", 10f);
+		serie.add("Janeiro", 11);
+		serie.add("Fevereiro", 10);
+		serie.add("Março", 11);
+		serie.add("Abril", 10);
 		getModel().addSeries(serie);
-		serie = new ChartSeries();
-		serie.add("Janeiro", 15f);
-		serie.add("Fevereiro", 20f);
-		serie.add("Abril", 20f);
+		serie = new ChartSeries("Zé da Cebola");
+		serie.add("Janeiro", 15);
+		serie.add("Fevereiro", 20);
+		serie.add("Abril", 20);
 		getModel().addSeries(serie);
+		
+		
+		model2 = new BarChartModel("Janeiro","Fevereiro", "Março", "Abril");
+		serie = new ChartSeries("Zé do Alho");
+		serie.setCor(ChartColor.CINZA);
+		serie.add("Janeiro", 12);
+		serie.add("Fevereiro", 12);
+		serie.add("Março", 12);
+		serie.add("Abril", 12);
+		getModel2().addSeries(serie);
+		serie = new ChartSeries("Zé da Cebola");
+		serie.add("Janeiro", 12);
+		serie.add("Fevereiro", 22);
+		serie.add("Abril", 22);
+		getModel2().addSeries(serie);
 	}
 	public BarChartModel getModel() {
 		return model;
 	}
 	public void setModel(BarChartModel model) {
 		this.model = model;
+	}
+	public BarChartModel getModel2() {
+		return model2;
+	}
+	public void setModel2(BarChartModel model2) {
+		this.model2 = model2;
 	}
 }

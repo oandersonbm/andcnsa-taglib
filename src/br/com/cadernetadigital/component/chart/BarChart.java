@@ -48,18 +48,55 @@ public class BarChart  extends UIComponentBase{
 		
 		if(getModel() != null){
 			
-			
-			
-			
-			out.write(" var chartData = {}; ");
-			out.write(" window.onload = function(){ "
-					+ " var ctx = document.getElementById('"+getClientId()+"').getContext('2d'); "
-					+ " window.myBar = new Chart(ctx).Bar(chartData, {responsive : true}); "
-					+ " }; ");
+			out.write(" var chartData"+getClientId()+" = {"+geraChartData()+"}; ");
+			out.write(" var ctx"+getClientId()+" = document.getElementById('"+getClientId()+"').getContext('2d'); "
+					+ " var myBar"+getClientId()+" = new Chart(ctx"+getClientId()+").Bar(chartData"+getClientId()+", {responsive : true, scaleShowLabels: true,multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}); ");
 			
 			
 		}
 		out.write("</script>");
+	}
+	private String geraChartData() {
+		ArrayList<String> labels = new ArrayList<String>();
+		//Preenchendo as séries
+		StringBuilder dataset = new StringBuilder(" datasets:[");
+		int j = 0;
+		int i = 0;
+		for(ChartSeries s : getModel().getSeries()){
+			if(j != 0)
+				dataset.append(",");
+			dataset.append("{");
+			dataset.append(s.getCor());
+			dataset.append(", label: '"+s.getLabel()+"', data:[");
+			i = 0;
+			for(String l : getModel().getLabels()){
+				if(!labels.contains(l))
+					labels.add(l);
+				if(i != 0)
+					dataset.append(",");
+				dataset.append(s.getValor(l));
+				i++;
+			}
+			dataset.append("]");
+			dataset.append("}");
+			j++;
+		}
+		dataset.append("]");
+		
+		//Organizando os labels
+		i = 0;
+		StringBuilder label = new StringBuilder(" labels: [");
+		for(String l2 : labels){
+			if(i != 0)
+				label.append(",");
+			label.append("'"+l2+"'");
+			i++;
+		}
+		label.append("]");
+		
+		i=0;
+		
+		return label.toString()+","+dataset.toString();
 	}
 	
 
