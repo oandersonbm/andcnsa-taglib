@@ -453,15 +453,40 @@
 			<component-type>dataTable</component-type>
 		</component>
 		<attribute>
-			<description>Valor que será armazenado, ex.: #{var.id}</description>
+			<description>Valor que será armazenado. | Ex.: #{var.id}</description>
 			<name>value</name>
 			<required>true</required>
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
-			<description>Valor da variável. Ex.: 'usuario'</description>
+			<description>Valor da variável. | Ex.: 'usuario'</description>
 			<name>var</name>
 			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>calendar</tag-name>
+		<component>
+			<component-type>calendar</component-type>
+		</component>
+		<attribute>
+			<description>O usuário pode salvar? true ou false</description>
+			<name>save</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Qual a ação que ele deve executar? | Ex.: bean.salva | Obs.: Lembrando</description>
+			<name>saveAction</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Defina o nome do bean que possui o CalendarModel da Caderneta Digital. | Ex.: bean.calendar | Obs.: Não é #{bean.calendar}</description>
+			<name>bean</name>
+			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>
 	</tag>
