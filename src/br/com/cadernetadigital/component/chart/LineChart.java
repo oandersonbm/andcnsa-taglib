@@ -21,7 +21,7 @@ import br.com.cadernetadigital.component.chart.model.ChartSeries;
 	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
 	@ResourceDependency(library="andcnsa", name="js/Chart.js")
 })
-public class BarChart  extends UIComponentBase{
+public class LineChart  extends UIComponentBase{
 	
 	private enum Propriedades{
 		model
@@ -50,7 +50,7 @@ public class BarChart  extends UIComponentBase{
 			
 			out.write(" var chartData"+getClientId()+" = {"+geraChartData()+"}; ");
 			out.write(" var ctx"+getClientId()+" = document.getElementById('"+getClientId()+"').getContext('2d'); "
-					+ " var myBar"+getClientId()+" = new Chart(ctx"+getClientId()+").Bar(chartData"+getClientId()+", {responsive : true, scaleShowLabels: true,multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}); ");
+					+ " var myBar"+getClientId()+" = new Chart(ctx"+getClientId()+").Line(chartData"+getClientId()+", {responsive : true, scaleShowLabels: true,multiTooltipTemplate: '<%= datasetLabel %> - <%= value %>'}); ");
 			
 			
 		}

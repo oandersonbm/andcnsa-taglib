@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class BarChartModel {
+public class ChartModel {
 	private List<String> labels;
 	private List<ChartSeries> series;
 	
-	public BarChartModel(String...label){
+	public ChartModel(String...label){
 		setLabels(new ArrayList<String>(Arrays.asList(label)));
 		series = new ArrayList<ChartSeries>();
 	}

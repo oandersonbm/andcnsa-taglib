@@ -427,10 +427,23 @@
 			<component-type>barChart</component-type>
 		</component>
 		<attribute>
-			<description>O modelo deve seguir o BarChartModel do tipo CadernetaDigital.</description>
+			<description>O modelo deve seguir o ChartModel do tipo CadernetaDigital.</description>
 			<name>model</name>
 			<required>true</required>
 			<type>br.com.cadernetadigital.component.chart.model.BarChartModel</type>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>lineChart</tag-name>
+		<component>
+			<component-type>lineChart</component-type>
+		</component>
+		<attribute>
+			<description>O modelo deve seguir o ChartModel do tipo CadernetaDigital.</description>
+			<name>model</name>
+			<required>true</required>
+			<type>br.com.cadernetadigital.component.chart.model.ChartModel</type>
 		</attribute>
 	</tag>
 	
