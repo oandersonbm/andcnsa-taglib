@@ -10,7 +10,8 @@ public class ChartSeries {
 		this.label = label;
 		setValores(new HashMap<String,Number>());
 	}
-	public ChartSeries(ChartColor cor){
+	public ChartSeries(String label, ChartColor cor){
+		this.label = label;
 		this.cor = cor;
 		setValores(new HashMap<String,Number>());
 	}

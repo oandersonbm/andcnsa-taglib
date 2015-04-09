@@ -15,7 +15,7 @@ public class TesteBean {
 	private ChartSeries serie;
 	@PostConstruct
 	public void init(){
-		model = new ChartModel("Janeiro","Fevereiro", "Março", "Abril");
+		model = new ChartModel("Janeiro","Fevereiro", "Março", "Abril", "Maio");
 		serie = new ChartSeries("Zé do Alho");
 		serie.setCor(ChartColor.CINZA);
 		serie.add("Janeiro", 11);

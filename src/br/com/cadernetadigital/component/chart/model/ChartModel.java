@@ -7,7 +7,9 @@ import java.util.List;
 public class ChartModel {
 	private List<String> labels;
 	private List<ChartSeries> series;
-	
+	public ChartModel(){
+		series = new ArrayList<ChartSeries>();
+	}
 	public ChartModel(String...label){
 		setLabels(new ArrayList<String>(Arrays.asList(label)));
 		series = new ArrayList<ChartSeries>();

@@ -79,6 +79,10 @@
 		<component-class>br.com.cadernetadigital.component.chart.BarChart</component-class>
 	</component>
 	<component>
+		<component-type>lineChart</component-type>
+		<component-class>br.com.cadernetadigital.component.chart.LineChart</component-class>
+	</component>
+	<component>
 		<component-type>dataTable</component-type>
 		<component-class>br.com.cadernetadigital.component.datatable.DataTable</component-class>
 	</component>
