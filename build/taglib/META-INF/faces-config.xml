@@ -86,4 +86,8 @@
 		<component-type>dataTable</component-type>
 		<component-class>br.com.cadernetadigital.component.datatable.DataTable</component-class>
 	</component>
+	<component>
+		<component-type>calendar</component-type>
+		<component-class>br.com.cadernetadigital.component.calendar.Calendar</component-class>
+	</component>
 </faces-config>

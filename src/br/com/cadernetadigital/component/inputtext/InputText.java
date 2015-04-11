@@ -88,29 +88,38 @@ public class InputText extends HtmlInputText {
 		
 		if(!getTipo().equals("static")){
 			setStyleClass("form-control "+getTipo());
+			super.encodeBegin(context);
 		}else{
 			out.write("<p class='form-control-static'>"+getValue()+"</p>");
 		}
-		super.encodeBegin(context);
 
 	}
 
 	@Override
 	public void encodeEnd(FacesContext context) throws IOException {
-		super.encodeEnd(context);
 		ResponseWriter out = context.getResponseWriter();
-		
-		List<FacesMessage> mensagens = context.getMessageList(getClientId(context));
-		
-		for(FacesMessage mensagem : mensagens){
-			if(mensagem.getSeverity() == FacesMessage.SEVERITY_ERROR)
-				out.write("<div class='form-return erro fa fa-times-circle'>"+mensagem.getDetail()+"</div>");
-			else if(mensagem.getSeverity() == FacesMessage.SEVERITY_WARN)
-				out.write("<div class='form-return warning fa fa-exclamation-circle'>"+mensagem.getDetail()+"</div>");
-			else
-				out.write("<div class='form-return info fa fa-info-circle'>"+mensagem.getDetail()+"</div>");
+		if (getLabel() != null) {
+			super.encodeEnd(context);
+			
+			List<FacesMessage> mensagens = context.getMessageList(getClientId(context));
+			
+			for(FacesMessage mensagem : mensagens){
+				if(mensagem.getSeverity() == FacesMessage.SEVERITY_ERROR)
+					out.write("<div class='form-return erro fa fa-times-circle'>"+mensagem.getDetail()+"</div>");
+				else if(mensagem.getSeverity() == FacesMessage.SEVERITY_WARN)
+					out.write("<div class='form-return warning fa fa-exclamation-circle'>"+mensagem.getDetail()+"</div>");
+				else
+					out.write("<div class='form-return info fa fa-info-circle'>"+mensagem.getDetail()+"</div>");
+			}
 		}
 		out.write("</div>"); // </form-group>
 		out.write("</div>"); // </col>
+	}
+	
+	@Override
+	public void decode(FacesContext context){
+		if (getLabel() != null) {
+			super.decode(context);
+		}
 	}
 }
