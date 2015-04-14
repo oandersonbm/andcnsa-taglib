@@ -99,7 +99,8 @@ public class InputText extends HtmlInputText {
 	public void encodeEnd(FacesContext context) throws IOException {
 		ResponseWriter out = context.getResponseWriter();
 		if (getLabel() != null) {
-			super.encodeEnd(context);
+			if(!getTipo().equals("static"))
+				super.encodeEnd(context);
 			
 			List<FacesMessage> mensagens = context.getMessageList(getClientId(context));
 			
