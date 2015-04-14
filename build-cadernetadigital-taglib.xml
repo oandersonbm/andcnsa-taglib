@@ -14,7 +14,7 @@
 	    </target>
 
 	    <target name="compilar" depends="init">
-	        <javac srcdir="src" destdir="${build.dir}">
+	        <javac  includeantruntime="false" srcdir="src" destdir="${build.dir}">
 	        	<classpath>
 	                <fileset dir="WebContent/WEB-INF/lib">
 	                    <include name="*.jar" />

@@ -17,7 +17,7 @@ import javax.faces.context.ResponseWriter;
 })
 public class WidgetLink extends HtmlOutcomeTargetLink{
 	private enum Propriedades{
-		col, icon, cor
+		col, icon, cor, ficon
 	}
 	public void setCol(Integer arg1){
 		getStateHelper().put(Propriedades.col, arg1);
@@ -31,6 +31,12 @@ public class WidgetLink extends HtmlOutcomeTargetLink{
 	public String getIcon(){
 		return (String)getStateHelper().eval(Propriedades.icon, "");
 	}
+	public void setFicon(String arg1){
+		getStateHelper().put(Propriedades.ficon, "fa fa-"+arg1);
+	}
+	public String getFicon(){
+		return (String)getStateHelper().eval(Propriedades.ficon, "");
+	}
 	public void setCor(String arg1){
 		getStateHelper().put(Propriedades.cor, "widget-"+arg1);
 	}
@@ -40,7 +46,7 @@ public class WidgetLink extends HtmlOutcomeTargetLink{
 	
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
-		setStyleClass("widgetLink "+getIcon()+" "+getCor());
+		setStyleClass("widgetLink "+getIcon()+" "+getFicon()+" "+getCor());
 		ResponseWriter out = context.getResponseWriter();
 		out.write("<div class='col-md-"+getCol()+"'>");
 		super.encodeBegin(context);
