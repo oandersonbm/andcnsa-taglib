@@ -14,12 +14,16 @@
 			<and:tabContainer col="6">
 				<and:tab label="Teste">
 					<and:panel titulo="Teste">
-						<and:inputText tipo="cpf" label="CPF" />
-						<and:inputText tipo="numero" label="Número" />
-						<and:inputText tipo="cep" label="CEP" />
-						<and:inputText tipo="data" label="Data" />
-						<and:inputText tipo="hora" label="Hora" />
-						<and:inputText tipo="dinheiro" label="Dinheiro" />
+						<script type="text/javascript">
+							$(function() {
+								new GMaps({
+									el : '#mapa',
+									lat : -12.043333,
+									lng : -77.028333
+								});
+							});
+						</script>
+						<div id="mapa" style="width: 100%; height: 300px;"></div>
 					</and:panel>
 				</and:tab>
 				<and:tab label="Anderson">Conteúdo Anderson</and:tab>
