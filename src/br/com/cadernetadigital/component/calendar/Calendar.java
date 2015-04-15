@@ -50,7 +50,6 @@ public class Calendar extends UIInput{
 		out.write("<div id='"+getClientCalendarId()+"' class='save-"+getSave()+"'>");
 		out.write("</div>");
 		out.write("<input name='"+getClientId(context)+".titulo' type='hidden' />");
-		out.write("Verificar: "+getModel().getTitulo());
 		super.encodeBegin(context);
 	}
 	
