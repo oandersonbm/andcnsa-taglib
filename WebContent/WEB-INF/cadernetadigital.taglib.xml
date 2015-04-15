@@ -96,7 +96,7 @@
 			<component-type>inputText</component-type>
 		</component>
 		<attribute>
-			<description>Define o tipo de inputText a ser exibido. Possíveis valores: email, telefone, documento(cpf/cnpj), data etc.</description>
+			<description>Define o tipo de inputText a ser exibido. Possíveis valores: email, cep, telefone, cpf, data, hora, dataehora e dinheiro.</description>
 			<name>tipo</name>
 			<required>false</required>
 			<type>java.lang.String</type>

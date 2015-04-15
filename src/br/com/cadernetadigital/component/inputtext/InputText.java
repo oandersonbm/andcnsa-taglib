@@ -24,6 +24,7 @@ import br.com.cadernetadigital.component.inputtext.validador.obrigatorio.Obrigat
 		@ResourceDependency(library = "andcnsa", name = "js/jquery.min.js"),
 		@ResourceDependency(library = "andcnsa", name = "js/bootstrap-datepicker.min.js"),
 		@ResourceDependency(library = "andcnsa", name = "js/bootstrap-datepicker.pt-BR.min.js"),
+		@ResourceDependency(library = "andcnsa", name = "js/jquery.mask.min.js"),
 		@ResourceDependency(library = "andcnsa", name = "js/cdigital.js")
 })
 public class InputText extends HtmlInputText {

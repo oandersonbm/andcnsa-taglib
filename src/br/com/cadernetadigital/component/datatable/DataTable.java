@@ -13,6 +13,6 @@ import javax.faces.component.html.HtmlDataTable;
 public class DataTable extends HtmlDataTable{
 	public DataTable(){
 		super();
-		setStyleClass("table");
+		setStyleClass("table table-striped");
 	}
 }
