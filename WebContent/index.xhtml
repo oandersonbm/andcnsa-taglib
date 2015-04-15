@@ -11,15 +11,23 @@
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
 		<and:form>
-			<and:panel titulo="Calendário" col="6">
-				<and:calendar bean="calendarBean.calendar" save="true">
-				</and:calendar>
-			</and:panel>
+			<and:tabContainer col="6">
+				<and:tab label="Teste">
+					<and:panel titulo="Teste">
+						Panel dentro de tab.
+					</and:panel>
+				</and:tab>
+				<and:tab label="Anderson">Conteúdo Anderson</and:tab>
+			</and:tabContainer>
+			<and:tabContainer col="6">
+				<and:tab label="Teste">
+					<and:panel titulo="Teste">
+						Panel dentro de tab.
+					</and:panel>
+				</and:tab>
+				<and:tab label="Anderson">Conteúdo Anderson</and:tab>
+			</and:tabContainer>
 		</and:form>
-			<and:panel titulo="Calendário" col="6">
-				<and:calendar bean="calendarBean.calendar">
-				</and:calendar>
-			</and:panel>
 	</ui:define>
 </ui:composition>
 </html>

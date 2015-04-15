@@ -71,6 +71,14 @@
 		<component-class>br.com.cadernetadigital.component.select.SelectItems</component-class>
 	</component>
 	<component>
+		<component-type>tab</component-type>
+		<component-class>br.com.cadernetadigital.component.tab.Tab</component-class>
+	</component>
+	<component>
+		<component-type>tabContainer</component-type>
+		<component-class>br.com.cadernetadigital.component.tab.TabContainer</component-class>
+	</component>
+	<component>
 		<component-type>widgetLink</component-type>
 		<component-class>br.com.cadernetadigital.component.widget.WidgetLink</component-class>
 	</component>
