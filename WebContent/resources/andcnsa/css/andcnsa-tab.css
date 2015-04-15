@@ -1,0 +1,11 @@
+.tab-container{
+	background:#EEE;
+}
+.tab-content{
+	padding:10px;
+	border:1px solid #ddd;
+	border-top:none;
+	border-left-color:#ddd;
+	border-right-color:#ddd;
+	background:#FFF;
+}
