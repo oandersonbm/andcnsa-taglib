@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project name="taglib" default="empacotar">
+		<property name="build.dir" value="build/taglib" />
+	    <target name="limpar">
+	        <delete dir="${build.dir}" />
+	    </target>
+
+	    <target name="init" depends="limpar">
+	        <mkdir dir="${build.dir}" />
+	        <mkdir dir="${build.dir}/META-INF/resources/andcnsa" />
+	        <copydir src="WebContent/resources/andcnsa" dest="${build.dir}/META-INF/resources/andcnsa" />
+	        <copy file="WebContent/WEB-INF/cadernetadigital.taglib.xml" tofile="${build.dir}/META-INF/cadernetadigital.taglib.xml" />
+	        <copy file="WebContent/WEB-INF/faces-config.xml" tofile="${build.dir}/META-INF/faces-config.xml" />
+	    </target>
+
+	    <target name="compilar" depends="init">
+	        <javac  includeantruntime="false" srcdir="src" destdir="${build.dir}">
+	        	<classpath>
+	                <fileset dir="WebContent/WEB-INF/lib">
+	                    <include name="*.jar" />
+	                </fileset>
+	            </classpath>
+	        </javac>
+	    </target>
+
+	    <target name="empacotar" depends="compilar">
+	        <jar destfile="build/cadernetadigital-taglib.jar" basedir="${build.dir}" />
+	    	<delete file="C:/Users/anderson/git/cadernetadigital/cadernetadigital/WebContent/WEB-INF/lib/cadernetadigital-taglib.jar" />
+	        <jar destfile="C:/Users/anderson/git/cadernetadigital/cadernetadigital/WebContent/WEB-INF/lib/cadernetadigital-taglib.jar" basedir="${build.dir}" />
+	    </target>
+
+	</project>

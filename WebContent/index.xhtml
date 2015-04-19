@@ -32,20 +32,26 @@
 													+ e.latLng.lng() + ' </p>'
 										}
 									});
-								}
-								/*,
+								},
 								markerClusterer : function(map) {
 									return new MarkerClusterer(map);
 								}
-								*/
 							});
 						} catch (err) {
 							alert(err);
 						}
-						alert("OK");
 					});
 				</script>
 			</and:panel>
+
+			<and:form id="testeAjax">
+				<and:panel titulo="Teste">
+					<and:commandButton value="Teste AJAX">
+						<f:ajax render="@this" execute="data" />
+					</and:commandButton>
+					<and:inputText tipo="data" label="Teste" value="" />
+				</and:panel>
+			</and:form>
 
 		</and:form>
 	</ui:define>

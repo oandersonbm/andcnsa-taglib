@@ -27,6 +27,10 @@
 		<component-class>br.com.cadernetadigital.component.inputtext.InputText</component-class>
 	</component>
 	<component>
+		<component-type>outputText</component-type>
+		<component-class>br.com.cadernetadigital.component.outputtext.OutputText</component-class>
+	</component>
+	<component>
 		<component-type>menuBar</component-type>
 		<component-class>br.com.cadernetadigital.component.menu.MenuBar</component-class>
 	</component>
