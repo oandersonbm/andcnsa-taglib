@@ -46,7 +46,7 @@ public class Panel extends UIComponentBase{
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException{
 		ResponseWriter out = context.getResponseWriter();
-		out.write("<div class='andcnsa-panel col-md-"+getCol()+"'>");
+		out.write("<div id='"+getClientId(context)+"' class='andcnsa-panel col-md-"+getCol()+"'>");
 		out.write("<div class='panel panel-"+getCor()+"'>");
 		out.write("<div class='panel-heading'>");
 		out.write(getTitulo());

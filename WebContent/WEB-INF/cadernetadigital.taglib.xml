@@ -234,6 +234,12 @@
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
+			<description>Id do componente.</description>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
 			<description>Define o estilo de cor que terá o panel. Cores: cinza, azul, verde, amarelo e vermelho.</description>
 			<name>cor</name>
 			<required>false</required>

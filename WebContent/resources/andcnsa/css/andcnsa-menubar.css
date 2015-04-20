@@ -43,11 +43,11 @@
 	content:" ";
 	display:block;
 	position:absolute;
-	top:-16px;
+	top:-20px;
 	left:20px;
 	width:10px;
 	height:10px;
-	border:8px solid transparent;
+	border:10px solid transparent;
 	transform: rotate(90deg);
 	border-right-color:#FDFDFD;
 }
