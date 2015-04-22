@@ -420,6 +420,12 @@
 		<component>
 			<component-type>tabContainer</component-type>
 		</component>
+		<attribute>
+			<description>O componente será renderizado?</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
 	</tag>
 	
 	<tag>
@@ -427,6 +433,12 @@
 		<component>
 			<component-type>tab</component-type>
 		</component>
+		<attribute>
+			<description>O componente será renderizado?</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
 		<attribute>
 			<description>Título da tab</description>
 			<name>label</name>
@@ -509,6 +521,12 @@
 		<component>
 			<component-type>dataTable</component-type>
 		</component>
+		<attribute>
+			<description>O componente será renderizado?</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
 		<attribute>
 			<description>Valor que será armazenado. | Ex.: #{var.id}</description>
 			<name>value</name>

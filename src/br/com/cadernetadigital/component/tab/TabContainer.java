@@ -54,13 +54,15 @@ public class TabContainer extends UIComponentBase {
 		for (UIComponent component : getChildren()) {
 			if (component instanceof Tab) {
 				tab = (Tab) component;
-				tabs.add(tab);
-				out.write("<li class='" + active + "'>");
-				out.write("<a href='#" + ClientId.getLastId(tab.getClientId()) + "'>");
-				out.write(tab.getLabel());
-				out.write("</a>");
-				out.write("</li>");
-				active = "";
+				if(tab.isRendered()){
+					tabs.add(tab);
+					out.write("<li class='" + active + "'>");
+					out.write("<a href='#" + ClientId.getLastId(tab.getClientId()) + "'>");
+					out.write(tab.getLabel());
+					out.write("</a>");
+					out.write("</li>");
+					active = "";
+				}
 			}
 		}
 		out.write("</ul>");
