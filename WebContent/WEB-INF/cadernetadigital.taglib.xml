@@ -57,6 +57,12 @@
 			<required>true</required>
 			<type>java.lang.String</type>
 		</attribute>
+		<attribute>
+			<description>Id do modal.</description>
+			<name>modal</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
 	</tag>
 	<tag>
 		<tag-name>buttonContainer</tag-name>
@@ -266,6 +272,39 @@
 		<attribute>
 			<description>Define o subtitulo do panel.</description>
 			<name>subtitulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define se o panel pode ou não ser fechado.</description>
+			<name>fecha</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+
+	
+
+	<tag>
+		<tag-name>modal</tag-name>
+		<component>
+			<component-type>modal</component-type>
+		</component>
+		<attribute>
+			<description>Cria o título associado ao modal.</description>
+			<name>titulo</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Id do componente.</description>
+			<name>id</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o estilo de cor que terá o panel. Cores: cinza, azul, verde, amarelo e vermelho.</description>
+			<name>cor</name>
 			<required>false</required>
 			<type>java.lang.String</type>
 		</attribute>

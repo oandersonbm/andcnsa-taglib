@@ -13,10 +13,11 @@ import javax.faces.context.ResponseWriter;
 	@ResourceDependency(library="andcnsa", name="css/font-awesome.min.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-fonts.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
-	@ResourceDependency(library="andcnsa", name="css/andcnsa-panel.css")
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-panel.css"),
+	@ResourceDependency(library="js", name="js/bootstrap.min.js")
 })
 public class Panel extends UIComponentBase{
-	private enum Propriedades{
+	protected enum Propriedades{
 		titulo, subtitulo, col, cor, fecha
 	}
 	public void setTitulo(String titulo){

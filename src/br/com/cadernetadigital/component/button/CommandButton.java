@@ -6,6 +6,7 @@ import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
 import javax.faces.component.html.HtmlCommandButton;
 import javax.faces.context.FacesContext;
+import javax.faces.context.ResponseWriter;
 
 @ResourceDependencies({
 	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
@@ -16,7 +17,7 @@ import javax.faces.context.FacesContext;
 })
 public class CommandButton extends HtmlCommandButton{
 	private enum Propriedades{
-		cor
+		cor, modal
 	}
 	public void setCor(String cor){
 		getStateHelper().put(Propriedades.cor, cor);
@@ -24,14 +25,25 @@ public class CommandButton extends HtmlCommandButton{
 	public String getCor(){
 		return (String)getStateHelper().eval(Propriedades.cor, "default");
 	}
+	public void setModal(String modal){
+		getStateHelper().put(Propriedades.modal, modal);
+	}
+	public String getModal(){
+		return (String)getStateHelper().eval(Propriedades.modal, null);
+	}
 	
 	public CommandButton(){
 		super();
 	}
 	
 	@Override
-	public void encodeBegin(FacesContext context) throws IOException{
+	public void encodeAll(FacesContext context) throws IOException{
+		ResponseWriter out = context.getResponseWriter();
 		setStyleClass("btn btn-"+getCor());
+		if(getModal() != null)
+			out.write("<span modal='"+getModal()+"'>");
 		super.encodeBegin(context);
+		if(getModal() != null)
+			out.write("</span>");
 	}
 }

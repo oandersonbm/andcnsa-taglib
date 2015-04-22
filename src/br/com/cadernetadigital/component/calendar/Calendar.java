@@ -99,7 +99,7 @@ public class Calendar extends UIInput{
 						+ "if (title) {"
 							+ "eventData = {title: title,start: start,end: end};"
 							+ "$('input[name$=\""+getClientCalendarId()+".titulo\"]').val(title);"
-							+ "$('#"+getClientCalendarId()+"').closest('form').submit();"
+							+ "$('#"+getClientCalendarId()+"').closest('form').submit();"//Envia o formulário mais próximo
 							+ "$('#"+getClientCalendarId()+"').fullCalendar('renderEvent', eventData, true);"
 						+ "}"
 						+ "$('#calendar').fullCalendar('unselect');"

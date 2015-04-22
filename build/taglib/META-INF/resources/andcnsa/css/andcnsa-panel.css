@@ -1,30 +1,52 @@
-.panel, .panel-heading{
-	border-radius:0px;
+.panel, .panel-heading {
+	border-radius: 0px;
 }
-.panel.panel-cinza{
-	background:#888;
-	color:#FFF;
+
+.panel.panel-cinza {
+	background: #888;
+	color: #FFF;
 }
-.panel.panel-verde{
-	background:#1abc9c;
-	color:#FFF;
+
+.panel.panel-verde {
+	background: #1abc9c;
+	color: #FFF;
 }
-.panel.panel-azul{
-	background-color:#337ab7;
-	color:#FFF;
+
+.panel.panel-azul {
+	background-color: #337ab7;
+	color: #FFF;
 }
-.panel.panel-vermelho{
-	background-color:#d9534f;
-	color:#FFF;
+
+.panel.panel-vermelho {
+	background-color: #d9534f;
+	color: #FFF;
 }
-.panel.panel-amarelo{
-	background-color:#f0ad4e;
-	color:#FFF;
+
+.panel.panel-amarelo {
+	background-color: #f0ad4e;
+	color: #FFF;
 }
-.panel .panel-heading{
-	background:none;
-	font-size:22px;
-	font-weight:100;
-	border:1px solid transparent;
-	border-bottom-color:rgba(0,0,0,.1);
+
+.panel .panel-heading {
+	background: none;
+	font-size: 22px;
+	font-weight: 100;
+	border: 1px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, .1);
+}
+
+.panel .panel {
+	border: none;
+	box-shadow: none;
+	margin-bottom:10px;
+}
+
+.panel .panel .panel-heading {
+	font-size: 18px;
+	font-weight: 500;
+	padding: 5px 10px;
+	border-bottom-color: #EFEFEF;
+}
+.panel .panel .panel-body{
+	padding:0px;
 }
