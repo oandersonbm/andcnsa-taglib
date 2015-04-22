@@ -14,7 +14,8 @@ import javax.faces.context.ResponseWriter;
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-fonts.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-panel.css"),
-	@ResourceDependency(library="js", name="js/bootstrap.min.js")
+	@ResourceDependency(library="andcnsa", name="js/jquery.min.js"),
+	@ResourceDependency(library="andcnsa", name="js/bootstrap.min.js")
 })
 public class Panel extends UIComponentBase{
 	protected enum Propriedades{
