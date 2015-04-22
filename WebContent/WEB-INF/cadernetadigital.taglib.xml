@@ -129,23 +129,35 @@
 			<description>Define o valor do campo.</description>
 			<name>value</name>
 			<required>false</required>
-			<type>java.lang.Boolean</type>
+			<type>java.lang.String</type>
 		</attribute>
 	</tag>
-
+	
 	<tag>
 		<tag-name>outputText</tag-name>
 		<component>
 			<component-type>outputText</component-type>
 		</component>
 		<attribute>
-			<description>Define o valor do campo.</description>
-			<name>value</name>
+			<description>Define se o campo aparecerá sozinho ou terá label. Valor: qualquer valor.</description>
+			<name>label</name>
 			<required>false</required>
-			<type>java.lang.Boolean</type>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Define o número de colunas que o campo terá. Valor: entre 1 e 12.</description>
+			<name>col</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description>Define o tipo de campo. Valores: 0. Padrão, formatado para formulário, se apresentar label; 1. Somente o texto.</description>
+			<name>tipo</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
 		</attribute>
 	</tag>
-
+	
 	<tag>
 		<tag-name>menuBar</tag-name>
 		<component>

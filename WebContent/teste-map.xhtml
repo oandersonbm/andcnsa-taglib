@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:and="http://cadernetadigital.com.br/ui">
+
+<ui:composition template="/resources/dashboard.xhtml">
+	<ui:define name="title">Teste</ui:define>
+	<ui:define name="conteudo">
+		<and:form>
+			<and:panel titulo="Mapa">
+				<div id="mapa" class="mapa"></div>
+				<script type="text/javascript">
+					$(function() {
+						try {
+							var map = new GMaps({
+								el : '#mapa',
+								lat : -9.654639466007819,
+								lng : -35.75806125998497,
+								click : function(e) {
+									map.addMarker({
+										lat : e.latLng.lat(),
+										lng : e.latLng.lng(),
+										title : 'New marker',
+										infoWindow : {
+											content : '<p>Latitude: '
+													+ e.latLng.lat()
+													+ '<br />Longitude: '
+													+ e.latLng.lng() + ' </p>'
+										}
+									});
+								},
+								markerClusterer : function(map) {
+									return new MarkerClusterer(map);
+								}
+							});
+						} catch (err) {
+							alert(err);
+						}
+					});
+				</script>
+			</and:panel>
+
+			<and:form id="testeAjax">
+				<and:panel titulo="Teste">
+					<and:commandButton value="Teste AJAX">
+						<f:ajax render="@this" execute="data" />
+					</and:commandButton>
+					<and:inputText tipo="data" label="Teste" value="" />
+				</and:panel>
+			</and:form>
+
+		</and:form>
+	</ui:define>
+</ui:composition>
+</html>
