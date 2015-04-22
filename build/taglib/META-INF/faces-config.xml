@@ -51,6 +51,10 @@
 		<component-class>br.com.cadernetadigital.component.panel.Panel</component-class>
 	</component>
 	<component>
+		<component-type>modal</component-type>
+		<component-class>br.com.cadernetadigital.component.modal.Modal</component-class>
+	</component>
+	<component>
 		<component-type>form</component-type>
 		<component-class>br.com.cadernetadigital.component.form.Form</component-class>
 	</component>

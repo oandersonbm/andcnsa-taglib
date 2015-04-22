@@ -38,15 +38,17 @@
 .panel .panel {
 	border: none;
 	box-shadow: none;
+	margin-left:-10px;
 	margin-bottom:10px;
+	
 }
 
 .panel .panel .panel-heading {
 	font-size: 18px;
 	font-weight: 500;
 	padding: 5px 10px;
-	border-bottom-color: #EFEFEF;
+	border-bottom-color: #DDD;
 }
 .panel .panel .panel-body{
-	padding:0px;
+	padding:10px 0px;
 }
