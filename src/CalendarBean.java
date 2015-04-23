@@ -16,7 +16,7 @@ public class CalendarBean {
 		calendar.setTitulo("Nenhum");
 	}
 	public void salva(){
-		System.out.println("Salvando... ou não... Aqui vou eu!");
+		System.out.println("Salvando...");
 		System.out.println(getCalendar().getTitulo());
 	}
 

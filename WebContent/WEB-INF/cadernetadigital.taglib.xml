@@ -568,6 +568,13 @@
 	</tag>
 	
 	<tag>
+		<tag-name>list</tag-name>
+		<component>
+			<component-type>list</component-type>
+		</component>
+	</tag>
+	
+	<tag>
 		<tag-name>dataTable</tag-name>
 		<component>
 			<component-type>dataTable</component-type>
@@ -590,6 +597,13 @@
 			<required>true</required>
 			<type>java.lang.String</type>
 		</attribute>
+	</tag>
+	
+	<tag>
+		<tag-name>column</tag-name>
+		<component>
+			<component-type>column</component-type>
+		</component>
 	</tag>
 	
 	<tag>

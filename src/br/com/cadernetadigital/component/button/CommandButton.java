@@ -6,14 +6,15 @@ import javax.faces.application.ResourceDependencies;
 import javax.faces.application.ResourceDependency;
 import javax.faces.component.html.HtmlCommandButton;
 import javax.faces.context.FacesContext;
-import javax.faces.context.ResponseWriter;
 
 @ResourceDependencies({
 	@ResourceDependency(library="andcnsa", name="css/bootstrap.min.css"),
 	@ResourceDependency(library="andcnsa", name="css/font-awesome.min.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-fonts.css"),
 	@ResourceDependency(library="andcnsa", name="css/andcnsa.css"),
-	@ResourceDependency(library="andcnsa", name="css/andcnsa-button.css")
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-button.css"),
+	@ResourceDependency(library="andcnsa", name="js/jquery.min.js"),
+	@ResourceDependency(library="andcnsa", name="js/bootstrap.min.js")
 })
 public class CommandButton extends HtmlCommandButton{
 	private enum Propriedades{
@@ -38,12 +39,12 @@ public class CommandButton extends HtmlCommandButton{
 	
 	@Override
 	public void encodeAll(FacesContext context) throws IOException{
-		ResponseWriter out = context.getResponseWriter();
+		
 		setStyleClass("btn btn-"+getCor());
-		if(getModal() != null)
-			out.write("<span modal='"+getModal()+"'>");
+		if(getModal() != null){
+			setType("button");
+			setOnclick("$('#"+getModal()+"').modal('toggle');");
+		}
 		super.encodeBegin(context);
-		if(getModal() != null)
-			out.write("</span>");
 	}
 }

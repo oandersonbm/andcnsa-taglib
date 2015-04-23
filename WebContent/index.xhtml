@@ -12,12 +12,9 @@
 	<ui:define name="conteudo">
 		<and:form>
 			<and:panel titulo="Mapa">
-				<and:commandButton value="Teste" modal="oModal">
-					<f:ajax execute="@this" render="oModal" />
-				</and:commandButton>
-				<and:modal id="oModal" titulo="Teste">
-					Testando tudo...
-				</and:modal>
+				<and:list value="#{clienteBean.clientes}" var="o">
+					#{o.nome}
+				</and:list>
 			</and:panel>
 		</and:form>
 	</ui:define>
