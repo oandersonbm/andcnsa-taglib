@@ -12,9 +12,15 @@
 	<ui:define name="conteudo">
 		<and:form>
 			<and:panel titulo="Mapa">
-				<and:list value="#{clienteBean.clientes}" var="o">
-					#{o.nome}
-				</and:list>
+				<and:lista value="#{clienteBean.clientes}" var="o">
+					<and:item>#{o.nome}</and:item>
+					<and:item>#{o.nome}</and:item>
+					<and:item>#{o.nome}</and:item>
+				</and:lista>
+				<and:tabela value="#{clienteBean.clientes}" var="o">
+					<and:item titulo="Nome">#{o.nome}</and:item>
+					<and:item titulo="CEP">#{o.nome}</and:item>
+				</and:tabela>
 			</and:panel>
 		</and:form>
 	</ui:define>

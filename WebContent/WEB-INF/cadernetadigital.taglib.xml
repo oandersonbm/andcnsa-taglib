@@ -568,10 +568,30 @@
 	</tag>
 	
 	<tag>
-		<tag-name>list</tag-name>
+		<tag-name>lista</tag-name>
 		<component>
-			<component-type>list</component-type>
+			<component-type>lista</component-type>
 		</component>
+	</tag>
+	
+	<tag>
+		<tag-name>tabela</tag-name>
+		<component>
+			<component-type>tabela</component-type>
+		</component>
+	</tag>
+	
+	<tag>
+		<tag-name>item</tag-name>
+		<component>
+			<component-type>item</component-type>
+		</component>
+		<attribute>
+			<description>Valor que será apresentado no titulo do componente pai.</description>
+			<name>titulo</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
 	</tag>
 	
 	<tag>
