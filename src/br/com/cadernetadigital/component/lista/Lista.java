@@ -51,6 +51,7 @@ public class Lista extends UINamingContainer {
 	private final static DataModel<?> EMPTY_MODEL = new ListDataModel<Object>(
 			Collections.emptyList());
 
+	private int repeticoes = 0;
 	// our data
 	private Object value;
 
@@ -180,6 +181,8 @@ public class Lista extends UINamingContainer {
 	}
 
 	private void resetDataModel() {
+		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::Resetando dataModel");
+		System.out.println(this.getDataModel().toString());
 		if (this.isNestedInIterator()) {
 			this.setDataModel(null);
 		}
@@ -516,6 +519,7 @@ public class Lista extends UINamingContainer {
 	 */
 	public void process(FacesContext faces, PhaseId phase) {
 
+		
 		// stop if not rendered
 		if (!this.isRendered())
 			return;
@@ -536,8 +540,6 @@ public class Lista extends UINamingContainer {
 		try {
 			// has children
 			if (this.getChildCount() > 0) {
-				Iterator<?> itr;
-				UIComponent c;
 
 				Integer begin = this.getBegin();
 				Integer step = this.getStep();
@@ -574,28 +576,38 @@ public class Lista extends UINamingContainer {
 						+ s > e || rowCount == 1), i, begin, end, step));
 
 				while (i <= e && this.isIndexAvailable()) {
+					repeticoes++;
+					System.out.println(repeticoes);
 
 					if (PhaseId.RENDER_RESPONSE.equals(phase)
 							&& renderer != null) {
 						renderer.encodeChildren(faces, this);
 					} else {
-						preProcess(faces);
-						itr = this.getChildren().iterator();
-						while (itr.hasNext()) {
-							c = (UIComponent) itr.next();
+						
+						if(PhaseId.RENDER_RESPONSE.equals(phase))
+							beforeProcess(faces);
+						
+						
+						for (UIComponent c : this.getChildren()) {
 							if (PhaseId.APPLY_REQUEST_VALUES.equals(phase)) {
+								System.out.println("Request "+c.getClientId());
 								c.processDecodes(faces);
 							} else if (PhaseId.PROCESS_VALIDATIONS
 									.equals(phase)) {
+								System.out.println("Validação "+c.getClientId());
 								c.processValidators(faces);
 							} else if (PhaseId.UPDATE_MODEL_VALUES
 									.equals(phase)) {
+								System.out.println("Update "+c.getClientId());
 								c.processUpdates(faces);
 							} else if (PhaseId.RENDER_RESPONSE.equals(phase)) {
+								System.out.println("Render_response "+getDataModel().toString()+" # "+c.getClientId());
 								c.encodeAll(faces);
 							}
 						}
-						postProcess(faces);
+						
+						if(PhaseId.RENDER_RESPONSE.equals(phase))
+							afterProcess(faces);
 					}
 					i += s;
 					this.setIndex(faces, i);
@@ -619,11 +631,11 @@ public class Lista extends UINamingContainer {
 		}
 	}
 
-	protected void postProcess(FacesContext faces) throws IOException {
+	protected void afterProcess(FacesContext faces) throws IOException {
 
 	}
 
-	protected void preProcess(FacesContext context) throws IOException {
+	protected void beforeProcess(FacesContext context) throws IOException {
 
 	}
 

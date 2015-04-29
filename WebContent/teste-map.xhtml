@@ -10,6 +10,11 @@
 <ui:composition template="/resources/dashboard.xhtml">
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
+	<h:outputStylesheet name="css/andcnsa-mapa.css" library="andcnsa" />
+	<h:outputScript name="js/jquery.min.js" library="andcnsa" />
+	<h:outputScript name="js/api-google-maps.js" library="andcnsa" />
+	<h:outputScript name="js/gmaps.js" library="andcnsa" />
+	<h:outputScript name="js/api-google-maps-markerclusterer.js" library="andcnsa" />
 		<and:form>
 			<and:panel titulo="Mapa">
 				<div id="mapa" class="mapa"></div>

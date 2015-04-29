@@ -14,7 +14,8 @@ import br.com.cadernetadigital.component.item.Item;
 import br.com.cadernetadigital.component.lista.Lista;
 @ResourceDependencies({
 	@ResourceDependency(library="andcnsa", name="js/jquery.min.js"),
-	@ResourceDependency(library="andcnsa", name="js/jquery.dataTables.min.js")
+	@ResourceDependency(library="andcnsa", name="js/jquery.dataTables.min.js"),
+	@ResourceDependency(library="andcnsa", name="css/andcnsa-dataTable.css")
 })
 public class Tabela extends Lista{
 	private List<String> titulos = new ArrayList<String>();
@@ -22,7 +23,7 @@ public class Tabela extends Lista{
 	public void encodeBegin(FacesContext context) throws IOException {
 		ResponseWriter out = context.getResponseWriter();
 		out.write("<div id='"+getClientId(context)+"'>");
-		out.write("<table id='"+getId()+"' class='table'>");
+		out.write("<table id='"+getId()+"' class='table table-striped table-bordered' cellspacing='0' width='100%'>");
 		encodaTitulos(context);
 		super.encodeBegin(context);
 	}
@@ -32,19 +33,31 @@ public class Tabela extends Lista{
 		super.encodeEnd(context);
 		out.write("</table>");
 		out.write("<script>$(document).ready(function(){");
-		out.write("alert('OK');");
+		out.write("$('#"+getId()+"').DataTable({"
+				+ "'language': {"
+				+ "'lengthMenu': '_MENU_', "
+				+ "'zeroRecords': 'Não possui registros',"
+				+ "'info': 'Paginação _PAGE_ de _PAGES_',"
+				+ "'infoEmpty': 'Nenhum registro encontrado', "
+				+ "'infoFiltered': '(filtrado de um total de _MAX_ registros)',"
+				+ "'sSearch':'',"
+				+ "'sSearchPlaceholder':'Procura...',"
+				+ "'sScrollX': true,"
+				+ "oPaginate:{sFirst:'Primeira',sLast:'Última',sNext:'Próxima',sPrevious:'Anterior'}"
+				+ "}"
+				+ "}); $('#"+getId()+"').wrap('<div class=\"table-responsive\"></div>');");
 		out.write("});");
 		out.write("</script>");
 		out.write("</div>");
 	}
 	@Override
-	protected void preProcess(FacesContext faces)
+	protected void beforeProcess(FacesContext faces)
 			throws IOException {
 		ResponseWriter out = faces.getResponseWriter();
 		out.write("<tr>");
 	}
 	@Override
-	protected void postProcess(FacesContext faces)
+	protected void afterProcess(FacesContext faces)
 			throws IOException {
 		ResponseWriter out = faces.getResponseWriter();
 		out.write("</tr>");

@@ -99,8 +99,24 @@
 		<component-class>br.com.cadernetadigital.component.chart.LineChart</component-class>
 	</component>
 	<component>
+		<component-type>lista</component-type>
+		<component-class>br.com.cadernetadigital.component.lista.Lista</component-class>
+	</component>
+	<component>
+		<component-type>tabela</component-type>
+		<component-class>br.com.cadernetadigital.component.tabela.Tabela</component-class>
+	</component>
+	<component>
+		<component-type>item</component-type>
+		<component-class>br.com.cadernetadigital.component.item.Item</component-class>
+	</component>
+	<component>
 		<component-type>dataTable</component-type>
 		<component-class>br.com.cadernetadigital.component.datatable.DataTable</component-class>
+	</component>
+	<component>
+		<component-type>column</component-type>
+		<component-class>br.com.cadernetadigital.component.datatable.Column</component-class>
 	</component>
 	<component>
 		<component-type>calendar</component-type>

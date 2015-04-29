@@ -10,9 +10,9 @@ import br.com.cadernetadigital.model.cliente.Cliente;
 @ManagedBean
 public class ClienteBean {
 	private List<Cliente> clientes = new ArrayList<Cliente>();
-
+	
 	public List<Cliente> getClientes() {
-		Cliente a = new Cliente("06711155459","Anderson","Barbosa","andcnsamobile@gmail.com");
+		Cliente a = new Cliente("51561651560","Anderson","Barbosa","andcnsamobile@gmail.com");
 		clientes.add(a);
 		a = new Cliente("12345678910","Josicleidson","Barbos","andcnsamobil@gmail.com");
 		clientes.add(a);

@@ -12,6 +12,8 @@ public class Cliente {
 		this.sobrenome = sobrenome;
 		this.email = email;
 	}
+	public Cliente() {
+	}
 	public String getCpf() {
 		return cpf;
 	}
