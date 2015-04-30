@@ -8,6 +8,7 @@ import javax.faces.context.ResponseWriter;
 
 import br.com.cadernetadigital.component.lista.Lista;
 import br.com.cadernetadigital.component.tabela.Tabela;
+import br.com.cadernetadigital.component.tarefa.Tarefa;
 
 public class Item extends UIComponentBase{
 	private enum Propriedades {
@@ -37,6 +38,7 @@ public class Item extends UIComponentBase{
 		out = context.getResponseWriter();
 		imprimeLista();
 		imprimeColuna();
+		imprimeTarefa();
 	}
 	
 	private void imprimeLista() throws IOException{
@@ -49,11 +51,19 @@ public class Item extends UIComponentBase{
 	
 	private void imprimeColuna() throws IOException{
 		if(super.getParent().getClass() == Tabela.class){
-			((Tabela)super.getParent()).adicionaTitulo("Teste");
 			out.write("<td>");
 			this.encodeChildren(context);
 			out.write("</td>");
+		}		
+	}
+	
+	private void imprimeTarefa() throws IOException{
+		if(super.getParent().getClass() == Tarefa.class){
 			
+			out.write("<td id='"+getId()+"'><label>"+getTitulo());
+			out.write("<input id='"+getClientId(context)+"' type='checkbox' />");
+			this.encodeChildren(context);
+			out.write("</td></label>");
 		}		
 	}
 	

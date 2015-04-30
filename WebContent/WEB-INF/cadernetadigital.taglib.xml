@@ -575,10 +575,71 @@
 	</tag>
 	
 	<tag>
+		<tag-name>tarefa</tag-name>
+		<component>
+			<component-type>tarefa</component-type>
+		</component>
+		<attribute>
+			<description>O componente será renderizado?</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Valor que será armazenado. | Ex.: #{var.id}</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Valor da variável. | Ex.: 'usuario'</description>
+			<name>var</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Quantidade de linhas por página</description>
+			<name>linhas</name>
+			<required>false</required>
+			<type>java.lang.Integer</type>
+		</attribute>
+		<attribute>
+			<description>Apresentará a paginação?</description>
+			<name>paginacao</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Apresentará opções de busca?</description>
+			<name>busca</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+	</tag>
+	
+	<tag>
 		<tag-name>tabela</tag-name>
 		<component>
 			<component-type>tabela</component-type>
 		</component>
+		<attribute>
+			<description>O componente será renderizado?</description>
+			<name>rendered</name>
+			<required>false</required>
+			<type>java.lang.Boolean</type>
+		</attribute>
+		<attribute>
+			<description>Valor que será armazenado. | Ex.: #{var.id}</description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Valor da variável. | Ex.: 'usuario'</description>
+			<name>var</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
 		<attribute>
 			<description>Quantidade de linhas por página</description>
 			<name>linhas</name>

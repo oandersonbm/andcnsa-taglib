@@ -1,0 +1,10 @@
+.tarefa{
+	width:100%;
+	background-color:#FFD;
+}
+.tarefa label{
+	border-bottom:1px solid #DDC;
+	padding:10px;
+	display:block;
+	width:100%;
+}

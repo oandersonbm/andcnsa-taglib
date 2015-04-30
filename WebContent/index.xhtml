@@ -11,8 +11,10 @@
 	<ui:define name="title">Teste</ui:define>
 	<ui:define name="conteudo">
 		<and:form>
-			<and:panel titulo="Mapa #{clienteSession.cliente.nome}">
-				
+			<and:panel titulo="Tarefa">
+				<and:tarefa value="#{clienteBean.clientes}" var="o">
+					<and:item>#{o.nome}</and:item>
+				</and:tarefa>
 			</and:panel>
 		</and:form>
 	</ui:define>

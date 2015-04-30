@@ -107,6 +107,10 @@
 		<component-class>br.com.cadernetadigital.component.tabela.Tabela</component-class>
 	</component>
 	<component>
+		<component-type>tarefa</component-type>
+		<component-class>br.com.cadernetadigital.component.tarefa.Tarefa</component-class>
+	</component>
+	<component>
 		<component-type>item</component-type>
 		<component-class>br.com.cadernetadigital.component.item.Item</component-class>
 	</component>
