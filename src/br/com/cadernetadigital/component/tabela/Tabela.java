@@ -18,6 +18,27 @@ import br.com.cadernetadigital.component.lista.Lista;
 	@ResourceDependency(library="andcnsa", name="css/andcnsa-dataTable.css")
 })
 public class Tabela extends Lista{
+	private enum Propriedades{
+		paginacao, busca, linhas
+	}
+	public Boolean getPaginacao(){
+		return (Boolean)getStateHelper().eval(Propriedades.paginacao, false);
+	}
+	public void setPaginacao(Boolean arg1){
+		getStateHelper().put(Propriedades.paginacao, arg1);
+	}
+	public Boolean getBusca(){
+		return (Boolean)getStateHelper().eval(Propriedades.busca, false);
+	}
+	public void setBusca(Boolean arg1){
+		getStateHelper().put(Propriedades.busca, arg1);
+	}
+	public Integer getLinhas(){
+		return (Integer)getStateHelper().eval(Propriedades.linhas, 10);
+	}
+	public void setLinhas(Integer arg1){
+		getStateHelper().put(Propriedades.linhas, arg1);
+	}
 	private List<String> titulos = new ArrayList<String>();
 	@Override
 	public void encodeBegin(FacesContext context) throws IOException {
@@ -32,6 +53,10 @@ public class Tabela extends Lista{
 		ResponseWriter out = context.getResponseWriter();
 		super.encodeEnd(context);
 		out.write("</table>");
+		
+		Boolean info = true;
+		if(!getPaginacao())
+			info = false;
 		out.write("<script>$(document).ready(function(){");
 		out.write("$('#"+getId()+"').DataTable({"
 				+ "'language': {"
@@ -42,9 +67,13 @@ public class Tabela extends Lista{
 				+ "'infoFiltered': '(filtrado de um total de _MAX_ registros)',"
 				+ "'sSearch':'',"
 				+ "'sSearchPlaceholder':'Procura...',"
-				+ "'sScrollX': true,"
 				+ "oPaginate:{sFirst:'Primeira',sLast:'Última',sNext:'Próxima',sPrevious:'Anterior'}"
 				+ "}"
+				+ " , info:"+info
+				+ " , paging:"+getPaginacao()
+				+ " , 'searching':"+getBusca()
+				+ " , 'pageLength':"+getLinhas()
+				+ " , 'lengthMenu': [ ["+getLinhas()+", "+(getLinhas()*2)+", "+(getLinhas()*4)+", -1], ["+getLinhas()+", "+(getLinhas()*2)+", "+(getLinhas()*4)+", 'Todos'] ]"
 				+ "}); $('#"+getId()+"').wrap('<div class=\"table-responsive\"></div>');");
 		out.write("});");
 		out.write("</script>");

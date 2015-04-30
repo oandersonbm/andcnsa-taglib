@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 import br.com.cadernetadigital.model.cliente.Cliente;
 
 @ManagedBean
+@ViewScoped
 public class ClienteBean {
 	private List<Cliente> clientes = new ArrayList<Cliente>();
 	

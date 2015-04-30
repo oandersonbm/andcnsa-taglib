@@ -50,8 +50,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Lista extends UINamingContainer {
 	private final static DataModel<?> EMPTY_MODEL = new ListDataModel<Object>(
 			Collections.emptyList());
-
-	private int repeticoes = 0;
 	// our data
 	private Object value;
 
@@ -181,8 +179,7 @@ public class Lista extends UINamingContainer {
 	}
 
 	private void resetDataModel() {
-		System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::Resetando dataModel");
-		System.out.println(this.getDataModel().toString());
+		//TODO: Sem esse isNestedInIterator ele não atualiza a lista
 		if (this.isNestedInIterator()) {
 			this.setDataModel(null);
 		}
@@ -200,10 +197,8 @@ public class Lista extends UINamingContainer {
 			if (val == null) {
 				this.model = EMPTY_MODEL;
 			} else if (val instanceof DataModel) {
-				// noinspection unchecked
 				this.model = (DataModel<Object>) val;
 			} else if (val instanceof List) {
-				// noinspection unchecked
 				this.model = new ListDataModel<Object>((List<Object>) val);
 			} else if (Object[].class.isAssignableFrom(val.getClass())) {
 				this.model = new ArrayDataModel<Object>((Object[]) val);
@@ -538,7 +533,7 @@ public class Lista extends UINamingContainer {
 		this.setIndex(faces, -1);
 
 		try {
-			// has children
+			// Verifica quantos objetos tem dentro dele; <item>
 			if (this.getChildCount() > 0) {
 
 				Integer begin = this.getBegin();
@@ -555,13 +550,14 @@ public class Lista extends UINamingContainer {
 					end = size;
 				}
 
-				// grab renderer
+				//UIComponentBase
 				String rendererType = getRendererType();
+				
 				Renderer renderer = null;
 				if (rendererType != null) {
 					renderer = getRenderer(faces);
 				}
-
+				
 				int rowCount = getDataModel().getRowCount();
 				int i = ((begin != null) ? begin : 0);
 				int e = ((end != null) ? end : rowCount);
@@ -570,14 +566,13 @@ public class Lista extends UINamingContainer {
 				if (null != size && size > 0) {
 					e = size - 1;
 				}
-
+				
 				this.setIndex(faces, i);
 				this.updateIterationStatus(faces, new IterationStatus(true, (i
 						+ s > e || rowCount == 1), i, begin, end, step));
-
+				
+				
 				while (i <= e && this.isIndexAvailable()) {
-					repeticoes++;
-					System.out.println(repeticoes);
 
 					if (PhaseId.RENDER_RESPONSE.equals(phase)
 							&& renderer != null) {
@@ -587,21 +582,17 @@ public class Lista extends UINamingContainer {
 						if(PhaseId.RENDER_RESPONSE.equals(phase))
 							beforeProcess(faces);
 						
-						
+						//Imprime os objetos de dentro do loop
 						for (UIComponent c : this.getChildren()) {
 							if (PhaseId.APPLY_REQUEST_VALUES.equals(phase)) {
-								System.out.println("Request "+c.getClientId());
 								c.processDecodes(faces);
 							} else if (PhaseId.PROCESS_VALIDATIONS
 									.equals(phase)) {
-								System.out.println("Validação "+c.getClientId());
 								c.processValidators(faces);
 							} else if (PhaseId.UPDATE_MODEL_VALUES
 									.equals(phase)) {
-								System.out.println("Update "+c.getClientId());
 								c.processUpdates(faces);
 							} else if (PhaseId.RENDER_RESPONSE.equals(phase)) {
-								System.out.println("Render_response "+getDataModel().toString()+" # "+c.getClientId());
 								c.encodeAll(faces);
 							}
 						}

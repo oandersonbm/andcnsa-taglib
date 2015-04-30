@@ -12,13 +12,7 @@
 	<ui:define name="conteudo">
 		<and:form>
 			<and:panel titulo="Mapa #{clienteSession.cliente.nome}">
-				<and:tabela value="#{clienteBean.clientes}" var="o">
-					<and:item titulo="Nome">
-						<h:commandLink value="#{o.nome}">					
-						</h:commandLink>
-					</and:item>
-					<and:item titulo="CPF">#{o.cpf}</and:item>
-				</and:tabela>
+				
 			</and:panel>
 		</and:form>
 	</ui:define>
